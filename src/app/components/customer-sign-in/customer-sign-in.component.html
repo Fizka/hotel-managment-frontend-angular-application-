@@ -1,0 +1,9 @@
+<div id="pola">
+  <div id="data">
+    <input type="text" class="inputform" name="username" placeholder="Wpisz login" id="username" required [(ngModel)]="loginPodany" >
+    <br/>
+    <input type="password" class="inputform" name="password" placeholder="Wpisz haslo" id="password" required [(ngModel)]="passwordPodane">
+    <br/>
+    <button class="buttonSo" (click)="onSubmit()" >Zaloguj</button>
+  </div>
+</div>

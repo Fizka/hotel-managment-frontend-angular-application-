@@ -1,0 +1,5 @@
+<div class="tablica">
+  <div class="ogloszenie" *ngFor="let roomTamp of  roomArr | async">
+    <app-room-tab [room]='roomTamp'></app-room-tab>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div *ngIf="room">
+  <h2> {{room.title}}</h2> <br/>
+  <label>Numer Pokoju:  </label> {{room.numberRM}} <br/>
+  <label>Piętro:  </label> {{room.floor}} <br/>
+  <label>Cena: </label> {{room.price}} <br/>
+  <label>Maksymalna Liczba osób: </label> {{room.maxCapacity}} <br/>
+  <label>Opis </label> {{room.description}} <br/>
+  <Button (click)="MakeReervation()"> Zarezerwuj </Button>
+</div>
+

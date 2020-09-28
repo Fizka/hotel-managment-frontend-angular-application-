@@ -1,0 +1,13 @@
+<div id="pola">
+  <div id="data">
+    <input type="text" class="inputform" name="username" placeholder="Login" id="username" required [(ngModel)]="user.login" >
+    <br/>
+    <input type="password" class="inputform" name="password" placeholder="Hasło" id="password"  required [(ngModel)]="user.password">
+    <br/>
+    <input type="password" class="inputform" name="password" placeholder="Powtórz hasło" id="passwordTwo" required [(ngModel)]="password">
+    <br/>
+    <input type="text" class="inputform" name="mail" placeholder="Mail" id="mail" required [(ngModel)]="user.email">
+    <br/>
+    <button class="buttonSo" (click)="onSubmit()" >Zarejestruj</button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div [style.visibility]="visible" [style.opacity]="opacity" id="menu">
+  <ul>
+    <li>
+      <a *ngIf="!checker()" href="{{statelog}}" (click)="onSubmit()">{{logowanie}}</a>
+    </li>
+    <li>
+      <a href="roomboard" > Oferty </a>
+    </li>
+    <li>
+      <a href="workercreation" > Tworzenie prac </a>
+    </li>
+    <li>
+      <a href="e_worker" > e-Worker </a>
+    </li>
+    <li>
+      <a href="workerboard" > Pracownicy </a>
+    </li>
+    <li>
+      <a href="customerboard" > Klijenci </a>
+    </li>
+    <li>
+      <a *ngIf="!IsLogged()" href="signup" >Rejestracja</a>
+    </li>
+  </ul>
+</div>
+<button id="hamburger" (click)="hamburger()">&#9776;</button>

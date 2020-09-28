@@ -1,0 +1,5 @@
+<div class="tablica">
+  <div class="pracownik" *ngFor="let workerTmp of  workerArr | async">
+    <app-worker-tab [worker]='workerTmp'></app-worker-tab>
+  </div>
+</div>

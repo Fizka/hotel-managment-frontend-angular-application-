@@ -1,0 +1,73 @@
+<div *ngIf="room">
+  <h2> {{room.title}}</h2> <br/>
+  <label>Numer Pokoju:  </label> {{room.numberRM}} <br/>
+  <label>Piętro:  </label> {{room.floor}} <br/>
+  <label>Cena: </label> {{room.price}} <br/>
+  <label>Maksymalna Liczba osób: </label> {{room.maxCapacity}} <br/>
+  <label>Opis </label> {{room.description}} <br/>
+  <label> Terminy </label> <br/>
+
+  <b>{{todaydate | date:'d/M/y'}}</b> <br/>
+
+  <select (change) = "changemonths($event)">
+    <option *ngFor = "let i of months" name="wybranyMiesiac" > {{i}} </option>
+  </select>
+  <br/>
+  <b> {{nazwaAktualnegoMiesiaca}}</b>
+
+  <div id="kalendarz">
+    <div  *ngFor="let numerDniaTygodnia of jup ">
+      <div class="dni" > {{nazwaDnia[numerDniaTygodnia-1]}} </div>
+    </div>
+    <br/>
+    <br>
+    <div   *ngFor="let dni of dniMs ">
+      <span *ngIf="dni == 80 ; then condition3 else condition4" >
+        </span>
+      <ng-template #condition3>
+        <br/>
+        <br/>
+      </ng-template>
+      <ng-template #condition4 >
+
+        <span *ngIf="dni <100; then condition1 else condition2" >
+        </span>
+
+        <ng-template #condition1>
+
+          <span *ngIf="kolorChecker[dni]; then condition5 else condition6" >
+        </span>
+          <ng-template #condition5>
+            <div class="dni" style="color: darkred" >
+            {{dni}}
+            </div>
+          </ng-template>
+          <ng-template #condition6>
+              <div class="dni" style="color: aquamarine" >
+                {{dni}}
+              </div>
+          </ng-template>
+        </ng-template>
+
+        <ng-template #condition2 >
+          <div  class="dni" style="color: darkred">
+
+          </div>
+        </ng-template>
+      </ng-template>
+
+
+  </div>
+
+  </div>
+  <br/>
+  <p> Od </p>
+  <input type="Date" name="StartDate" required [(ngModel)]="StartDate">
+  <p> Do </p>
+  <input type="Date" name="EndDate" required [(ngModel)]="EndDate">
+
+  <br/>
+  <br/>
+  <button (click)="onSubmit()">Dodaj Rezerwacje</button>
+  </div>
+

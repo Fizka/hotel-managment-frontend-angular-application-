@@ -1,0 +1,5 @@
+<div class="tablica">
+  <div class="klijenci" *ngFor="let customerTmp of  customerArr | async">
+    <app-customer-details [customer]='customerTmp'></app-customer-details>
+  </div>
+</div>

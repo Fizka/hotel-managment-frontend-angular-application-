@@ -1,0 +1,22 @@
+.dni{
+  height: 80px;
+  width: 80px;
+  background: whitesmoke;
+  margin: 10px;
+  border: solid 5px ;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  columns: 7;
+  font-size: 14px;
+}
+
+#kalendarz{
+  box-sizing: content-box;
+  flex-wrap: wrap;
+  display: flex;
+  width: 700px;
+}
+
+

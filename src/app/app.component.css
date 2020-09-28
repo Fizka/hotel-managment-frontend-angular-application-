@@ -1,0 +1,28 @@
+#content{
+  background: #2e303d;
+  border-radius: 5px;
+  min-height: 500px;
+  padding: 0px 40px 0px 40px;
+  box-shadow: -5px -5px 15px black;
+}
+
+#content h2{
+  text-align: center;
+  border-bottom: 1px solid #2e303d;
+}
+
+#content h2:hover{
+  transform: scale(1.2) rotate(0.5deg);
+}
+
+.inside {
+  background: #4E4F63;
+  min-height: 500px;
+  padding: 0px 20px 20px 20px;
+  margin: 0px 30px 0px 30px;
+  box-shadow: -5px -5px 15px black;
+}
+
+
+
+

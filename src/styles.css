@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  background: #2e303d;
+}
+
+body{
+  margin: 0px;
+  font-family: 'Raleway', sans-serif, cursive;
+  font-size: 16px;
+  color: black;
+  z-index: 1;
+}
+
+.btn-secondary{
+  width: 150px;
+}
+
+.btn-primary{
+  width: 200px;
+  margin: 10px;
+}
