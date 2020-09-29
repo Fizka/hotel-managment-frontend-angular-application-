@@ -22,6 +22,8 @@ import { CustomerDetailsComponent } from './components/customer-details/customer
 import { CustomerBoardComponent } from './components/customer-board/customer-board.component';
 import { ReservationCreateComponent } from './components/reservation-create/reservation-create.component';
 import { CustomerSignInComponent } from './components/customer-sign-in/customer-sign-in.component';
+import { WorkerEditComponent } from './components/worker-edit/worker-edit.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CustomerSignInComponent } from './components/customer-sign-in/customer-
     CustomerDetailsComponent,
     CustomerBoardComponent,
     ReservationCreateComponent,
-    CustomerSignInComponent
+    CustomerSignInComponent,
+    WorkerEditComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,
