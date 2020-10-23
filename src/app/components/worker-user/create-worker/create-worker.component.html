@@ -19,7 +19,7 @@
     <br/>
     <input type="text" class="inputform" name="pesel" placeholder="pesel" id="pesel"  formControlName="pesel">
     <br/>
-
+    <label>Uprawnienia</label>
       <select  formControlName="uprawnienia" >
      <option *ngFor="let upr of uprawnienia" [ngValue]="upr.id"> {{upr.stan}}</option>
     </select>
@@ -27,7 +27,7 @@
     <br/>
     <br/>
     <label>   Data Zatrudnienia:  </label>
-    <input type="Date" name="dateofemployment"  formControlName="dateofemployment">
+    <input type="Date" name="dateofbirth"  formControlName="dateofemployment">
     <br/>
     <br/>
     <label>   Data Urodzenia:  </label>

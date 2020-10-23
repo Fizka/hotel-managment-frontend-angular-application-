@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Worker} from '../../service/worker';
-import {WorkerService} from '../../service/worker.service';
+import {Worker} from '../../../models/worker';
+import {WorkerService} from '../../../service/worker.service';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
@@ -58,7 +58,6 @@ export class CreateWorkerComponent implements OnInit {
   }
 
   sub() {
-
   if(this.uprawnieniaForm.get("uprawnienia").value == 1){
     this.worker.privileges = "aktywny";
   }else {

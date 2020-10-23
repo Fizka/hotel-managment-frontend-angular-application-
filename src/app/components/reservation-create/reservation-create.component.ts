@@ -1,10 +1,10 @@
 import {AfterViewInit, Component, Input, OnInit, Renderer, ViewChild} from '@angular/core';
-import {Room} from '../../service/room';
+import {Room} from '../../models/room';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../service/room.service';
 import {ReservationService} from '../../service/reservation.service';
 import {Observable} from 'rxjs';
-import {Reservation} from '../../service/reservation';
+import {Reservation} from '../../models/reservation';
 
 @Component({
   selector: 'app-reservation-create',

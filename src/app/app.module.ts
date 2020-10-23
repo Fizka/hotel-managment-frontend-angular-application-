@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { WorkerComponent } from './components/worker/worker.component';
-import { CreateWorkerComponent } from './components/create-worker/create-worker.component';
-import { WorkerBoardComponent } from './components/worker-board/worker-board.component';
+import { WorkerComponent } from './components/worker-user/worker/worker.component';
+import { CreateWorkerComponent } from './components/worker-user/create-worker/create-worker.component';
+import { WorkerBoardComponent } from './components/worker-user/worker-board/worker-board.component';
 import { HeaderComponent } from './page/header/header.component';
 import { FooterComponent } from './page/footer/footer.component';
 import { MenuComponent } from './page/menu/menu.component';
@@ -17,13 +17,13 @@ import { RoomBoardComponent } from './components/room-board/room-board.component
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { ReservationDetailsComponent } from './components/reservation-details/reservation-details.component';
 import { RoomTabComponent } from './components/room-tab/room-tab.component';
-import { WorkerTabComponent } from './components/worker-tab/worker-tab.component';
-import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
-import { CustomerBoardComponent } from './components/customer-board/customer-board.component';
+import { WorkerTabComponent } from './components/worker-user/worker-tab/worker-tab.component';
+import { CustomerDetailsComponent } from './components/customer-user/customer-details/customer-details.component';
+import { CustomerBoardComponent } from './components/customer-user/customer-board/customer-board.component';
 import { ReservationCreateComponent } from './components/reservation-create/reservation-create.component';
-import { CustomerSignInComponent } from './components/customer-sign-in/customer-sign-in.component';
-import { WorkerEditComponent } from './components/worker-edit/worker-edit.component';
-import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { CustomerSignInComponent } from './components/customer-user/customer-sign-in/customer-sign-in.component';
+import { WorkerEditComponent } from './components/worker-user/worker-edit/worker-edit.component';
+import { CustomerEditComponent } from './components/customer-user/customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [

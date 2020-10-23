@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Room} from '../../service/room';
+import {Room} from '../../models/room';
 import {RoomService} from '../../service/room.service';
 
 @Component({

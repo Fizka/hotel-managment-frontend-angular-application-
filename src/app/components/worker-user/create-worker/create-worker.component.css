@@ -9,7 +9,7 @@
   padding: 30px;
   text-align: center;
   flex-wrap: wrap;
-  width: 400px;
+  width: 600px;
 }
 
 .inputform{
@@ -40,3 +40,5 @@
 #formUpr{
   display: inline;
 }
+
+

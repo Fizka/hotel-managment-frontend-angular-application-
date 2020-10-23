@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Room} from '../../service/room';
+import {Room} from '../../models/room';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../service/room.service';
 import {error} from 'util';
 import {WorkerService} from '../../service/worker.service';
-import {Worker} from '../../service/worker';
+import {Worker} from '../../models/worker';
 
 @Component({
   selector: 'app-room-details',

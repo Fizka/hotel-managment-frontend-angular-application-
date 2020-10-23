@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {WorkerService} from '../../service/worker.service';
-import { Worker } from '../../service/worker'
+import { Worker } from '../../models/worker'
 import {MenuComponent} from '../../page/menu/menu.component';
 import {CustomerService} from '../../service/customer.service';
 
@@ -19,7 +19,6 @@ export class SignInComponent implements OnInit {
   constructor(private WS: WorkerService, private router: Router, private menu : MenuComponent) { };
 
   ngOnInit() {
-
   }
 
   onSubmit(){

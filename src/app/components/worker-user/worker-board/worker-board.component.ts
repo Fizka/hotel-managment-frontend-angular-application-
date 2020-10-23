@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {RoomService} from '../../service/room.service';
+import {RoomService} from '../../../service/room.service';
 import {Observable} from 'rxjs';
-import {Room} from '../../service/room';
-import {WorkerService} from '../../service/worker.service';
+import {Room} from '../../../models/room';
+import {WorkerService} from '../../../service/worker.service';
 
 @Component({
   selector: 'app-worker-board',

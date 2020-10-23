@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {WorkerService} from '../../service/worker.service';
+import {WorkerService} from '../../../service/worker.service';
 import {Observable} from 'rxjs';
-import {CustomerService} from '../../service/customer.service';
+import {CustomerService} from '../../../service/customer.service';
 
 @Component({
   selector: 'app-customer-board',

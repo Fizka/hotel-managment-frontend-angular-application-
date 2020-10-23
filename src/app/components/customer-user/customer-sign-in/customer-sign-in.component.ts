@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Worker} from '../../service/worker';
-import {WorkerService} from '../../service/worker.service';
+import {Worker} from '../../../models/worker';
+import {WorkerService} from '../../../service/worker.service';
 import {Router} from '@angular/router';
-import {MenuComponent} from '../../page/menu/menu.component';
-import {CustomerService} from '../../service/customer.service';
-import {Customer} from '../../service/customer';
+import {MenuComponent} from '../../../page/menu/menu.component';
+import {CustomerService} from '../../../service/customer.service';
+import {Customer} from '../../../models/customer';
 
 @Component({
   selector: 'app-customer-sign-in',

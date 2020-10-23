@@ -1,0 +1,43 @@
+<div id="pola">
+  <div id="data">
+    <form [formGroup]="uprawnieniaForm">
+
+    <div *ngIf="worker" >
+      <br/>
+  <h2> Edytujesz pracownika:  {{worker.firstname}}  {{worker.lastname}} </h2><br/>
+      <label> Imie: </label>
+      <input type="text" class="inputform" name="firstname" placeholder="Imie" id="firstname"  formControlName="firstname"><br/> <br/>
+      <label> Nazwisko: </label>
+      <input type="text" class="inputform" name="lastname" placeholder="nazwisko" id="lastname"  formControlName="lastname"><br/> <br/>
+  <label> Login: </label>
+  <input type="text" class="inputform" name="username" placeholder="Login" id="username"  formControlName="login" ><br/> <br/>
+  <label> Hasło: </label>
+  <input type="password" class="inputform" name="password" placeholder="Hasło" id="password"  formControlName="password"><br/> <br/>
+  <label>Stanowisko : {{worker.position}}</label>
+  <input type="text" class="inputform" name="position" placeholder="stanowisko" id="position"  formControlName="position"><br/> <br/>
+  <label>E-mail {{worker.email}}</label>
+  <input type="text" class="inputform" name="email" placeholder="email" id="email"  formControlName="email"><br/> <br/>
+  <label>Stan Pracownika: {{worker.activity}}</label>
+      <input type="text" name="activity"  class="inputform" formControlName="activity"><br/> <br/>
+      <label>PESEL: {{worker.pesel}}</label>
+  <input type="text" class="inputform" name="pesel" placeholder="pesel" id="pesel"  formControlName="pesel"><br/> <br/>
+      <label>Obowiązki: {{worker.responsibilities}}</label>
+  <input type="text" class="inputform" name="responsibilities" placeholder="obowiazki" formControlName="responsibilities"><br/> <br/>
+      <label>Czas Pracy: {{worker.workinghours}}</label>
+  <input type="text" class="inputform" name="workinghours" placeholder="godziny pracy" formControlName="workinghours"><br/> <br/>
+      <div class="FormInput">
+      <label>Pensja: {{worker.salary}}</label>
+  <input type="number" name="salary" class="inputform" formControlName="salary"> <br/> <br/>
+      </div>
+      <label>Data Urodzenia: {{worker.dateofbirth}}</label>
+      <input type="Date" name="dateofbirth"  formControlName="dateofbirth"><br/> <br/>
+      <label>Data Zatrudnienia:  {{worker.dateofemployment}}</label>
+      <input type="Date" name="dateofemployment"  formControlName="dateofemployment"><br/> <br/>
+      <label>Uprawnienia: </label>
+  <select  formControlName="uprawnienia" ><br/> <br/>
+    <option *ngFor="let upr of uprawnienia" [ngValue]="upr.id" > {{upr.stan}}</option>
+  </select>
+      <button class="btn-primary"  (click)="Zapisz()">Zapisz</button>    </div>
+    </form>
+  </div>
+</div>

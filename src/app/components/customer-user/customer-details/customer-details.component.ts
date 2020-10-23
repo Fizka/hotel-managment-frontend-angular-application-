@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Worker} from '../../service/worker';
+import {Worker} from '../../../models/worker';
 import {Router} from '@angular/router';
-import {Customer} from '../../service/customer';
+import {Customer} from '../../../models/customer';
 
 @Component({
   selector: 'app-customer-details',

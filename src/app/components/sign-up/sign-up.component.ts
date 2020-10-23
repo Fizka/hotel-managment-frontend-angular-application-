@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Worker} from '../../service/worker';
+import {Worker} from '../../models/worker';
 import {Router} from '@angular/router';
 import {WorkerService} from '../../service/worker.service';
-import {Customer} from '../../service/customer';
+import {Customer} from '../../models/customer';
 import {CustomerService} from '../../service/customer.service';
 
 @Component({
