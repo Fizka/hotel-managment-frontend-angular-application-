@@ -14,6 +14,8 @@ import {ReservationCreateComponent} from './components/reservation-create/reserv
 import {CustomerSignInComponent} from './components/customer-user/customer-sign-in/customer-sign-in.component';
 import {CreateWorkerComponent} from './components/worker-user/create-worker/create-worker.component';
 import {WorkerEditComponent} from './components/worker-user/worker-edit/worker-edit.component';
+import {ReservationBoardComponent} from './components/reservation-board/reservation-board.component';
+import {RoomGridComponent} from './components/room-grid/room-grid.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'rommboard', pathMatch: 'full'},
@@ -29,6 +31,8 @@ const routes: Routes = [
   {path: 'reservationcreate/:id', component: ReservationCreateComponent},
   {path: 'e_worker', component: SignInComponent},
   {path: 'workercreation', component: CreateWorkerComponent},
+  {path: 'reservationboard', component: ReservationBoardComponent},
+  {path: 'roomgrid', component: RoomGridComponent},
   {path: 'editworker', component: WorkerEditComponent}
 ]
 

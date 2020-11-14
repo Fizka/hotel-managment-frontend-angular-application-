@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WorkerService} from '../../../service/worker.service';
 import {Observable} from 'rxjs';
 import {CustomerService} from '../../../service/customer.service';
@@ -9,17 +9,47 @@ import {CustomerService} from '../../../service/customer.service';
   styleUrls: ['./customer-board.component.css']
 })
 export class CustomerBoardComponent implements OnInit {
+  title = 'Pracownicy';
+  private gridApi;
 
-  constructor(private customerService : CustomerService) { }
-  customerArr: Observable <Worker[]>;
+  defaultColDef = {
+    sortable: true,
+    filter: true,
+    resizable: true
+  };
 
+  columnDefs = [
+    {headerName: 'Imie', field: 'firstname', sortable: true, filter: true},
+    {headerName: 'Nazwisko', field: 'lastname', sortable: true, filter: true},
+    {headerName: 'Login', field: 'login', sortable: true, filter: true},
+    {headerName: 'Hasło', field: 'password', sortable: true, filter: true},
+    {headerName: 'E-mail', field: 'email', sortable: true, filter: true},
+    {headerName: 'Uprawnienia', field: 'privileges', sortable: true, filter: true}
+  ];
+
+  rowData = [];
+
+  constructor(private customerService: CustomerService) {
+  }
+
+  customerArr: Observable<Worker[]>;
+
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridApi.sizeColumnsToFit();
+  }
 
   ngOnInit() {
     this.reloadData();
   }
 
-  reloadData(){
+  reloadData() {
     this.customerArr = this.customerService.getCustomersList();
+    this.customerService.getCustomersList().subscribe(
+      (data) => {
+        this.rowData = data;
+      }
+    );
   }
 
 }

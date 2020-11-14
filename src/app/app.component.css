@@ -1,5 +1,5 @@
 #content{
-  background: #2e303d;
+  background: whitesmoke;
   border-radius: 5px;
   min-height: 500px;
   padding: 0px 40px 0px 40px;
@@ -7,7 +7,6 @@
 }
 
 #content h2{
-  text-align: center;
   border-bottom: 1px solid #2e303d;
 }
 
@@ -17,12 +16,15 @@
 
 .inside {
   background: #4E4F63;
-  min-height: 500px;
+  min-height: 740px;
   padding: 0px 20px 20px 20px;
   margin: 0px 30px 0px 30px;
   box-shadow: -5px -5px 15px black;
 }
 
+.card{
+  background: #4E4F63 !important;
+}
 
 
 

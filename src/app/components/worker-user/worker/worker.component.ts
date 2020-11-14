@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Room} from '../../service/room';
+import {Room} from '../../../models/room';
 import {ActivatedRoute, Router} from '@angular/router';
-import {RoomService} from '../../service/room.service';
-import {Worker} from '../../service/worker';
-import {WorkerService} from '../../service/worker.service';
+import {RoomService} from '../../../service/room.service';
+import {Worker} from '../../../models/worker';
+import {WorkerService} from '../../../service/worker.service';
 
 @Component({
   selector: 'app-worker',
@@ -14,6 +14,7 @@ export class WorkerComponent implements OnInit {
 
   worker : Worker;
   id : any;
+  isVisible : boolean = true;
 
   constructor(private router : Router, private route: ActivatedRoute, private workerService: WorkerService) { }
 
@@ -31,5 +32,13 @@ export class WorkerComponent implements OnInit {
     )
   }
 
+  GotoEditWorker(){
+   //wyswietlanie komponentu
+    this.isVisible = false;
+  }
+
+  Zapisz(){
+
+  }
 
 }

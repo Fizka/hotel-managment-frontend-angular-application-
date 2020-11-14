@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Worker} from '../../service/worker';
+import {Worker} from '../../../models/worker';
 import {Router} from '@angular/router';
 
 @Component({

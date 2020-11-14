@@ -59,9 +59,9 @@ export class CreateWorkerComponent implements OnInit {
 
   sub() {
   if(this.uprawnieniaForm.get("uprawnienia").value == 1){
-    this.worker.privileges = "aktywny";
+    this.worker.privileges = 1;
   }else {
-    this.worker.privileges = "nieaktywny";
+    this.worker.privileges = 0;
   }
     this.worker.dateofbirth = this.uprawnieniaForm.get("dateofbirth").value;
     this.worker.lastname = this.uprawnieniaForm.get("lastname").value;

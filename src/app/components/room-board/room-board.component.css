@@ -1,0 +1,28 @@
+
+.elemy{
+  margin: 20px;
+  text-align: center;
+  padding: 5px;
+  flex-flow: row;
+}
+
+.danepok{
+  padding-top: 30px;
+  background: whitesmoke;
+  text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tab{
+  padding-top: 30px ;
+  display: flex;
+}
+
+
+.card{
+  background: #4E4F63 !important;
+}

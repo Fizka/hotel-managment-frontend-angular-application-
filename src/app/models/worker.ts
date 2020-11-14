@@ -13,5 +13,5 @@ export class Worker {
   pesel: number;
   workinghours: string;
   idWorker: number;
-  privileges : string;
+  privileges : number;
 }

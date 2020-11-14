@@ -24,7 +24,15 @@ import { ReservationCreateComponent } from './components/reservation-create/rese
 import { CustomerSignInComponent } from './components/customer-user/customer-sign-in/customer-sign-in.component';
 import { WorkerEditComponent } from './components/worker-user/worker-edit/worker-edit.component';
 import { CustomerEditComponent } from './components/customer-user/customer-edit/customer-edit.component';
+import {AgGridModule} from 'ag-grid-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReservationBoardComponent } from './components/reservation-board/reservation-board.component';
+import { RoomGridComponent } from './components/room-grid/room-grid.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalYesNoComponent } from './components/modal-yes-no/modal-yes-no.component';
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,16 +54,25 @@ import { CustomerEditComponent } from './components/customer-user/customer-edit/
     ReservationCreateComponent,
     CustomerSignInComponent,
     WorkerEditComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    ReservationBoardComponent,
+    RoomGridComponent,
+    ModalYesNoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
     HttpClientModule,
+    AgGridModule.withComponents([]),
+    BrowserAnimationsModule
   ],
   providers: [ ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalYesNoComponent]
 })
 export class AppModule { }

@@ -1,5 +1,18 @@
+
+
 <div *ngIf="room">
-  <h2> <a (click)="Goto()">  {{room.title}}  </a> </h2> <br/>
-  <label>Cena: </label> {{room.price}} <br/>
-  <label>Maksymalna Liczba osób: </label> {{room.maxCapacity}} <br/>
+  <div id="karta">
+    <div style="border:4px solid white;" >
+        <div class="card border-primary mb-3 " >
+          <div class="card-header"> <a (click)="Goto()">  {{room.title}}  </a> </div> <br/>
+          <div id="zawartosc">
+            <div class="form-group">     <label>Cena: </label> {{room.price}} <br/></div>
+            <div class="form-group">  <label>Maksymalna Liczba osób: </label> {{room.maxCapacity}} <br/></div>
+          <div class="form-group"> <div id="zdjecie"></div> <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
 </div>

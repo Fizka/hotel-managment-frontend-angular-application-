@@ -37,7 +37,6 @@ export class CustomerSignInComponent implements OnInit {
           sessionStorage.setItem('login', JSON.stringify(this.user));
           alert("Udało się");
           this.menu.IsOut();
-
         }else{
           alert("Blad logowania");
         }
@@ -47,7 +46,7 @@ export class CustomerSignInComponent implements OnInit {
   }
 
   loguj( password ) {
-
+console.log(this.user.password);
     if(this.user !== undefined){
       if( password == this.user.password ){
         return true;

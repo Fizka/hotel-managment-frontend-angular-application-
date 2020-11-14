@@ -24,13 +24,11 @@ export class MenuComponent implements OnInit {
       this.checker();
     }
 
-
     onSubmit(){
       if(this.IsLogged()){
         sessionStorage.clear();
       }
     }
-
 
   hamburger() {
     if (this.state === false) {
@@ -65,7 +63,7 @@ export class MenuComponent implements OnInit {
   IsOut(){
     alert("Zmiana!")
     this.logowanie = 'Wyloguj';
-    this.router.navigate(['rommboard']);
+    this.router.navigate(['roomboard']);
   }
 
 }

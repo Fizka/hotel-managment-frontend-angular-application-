@@ -20,3 +20,19 @@
 }
 
 
+#nav{
+  margin: 5%;
+}
+
+#nav{
+  background-color: darkviolet;
+  padding: 0.5em 0;
+}
+
+#karta{
+  margin: 10px;
+}
+
+.card{
+  background: #4E4F63 !important;
+}

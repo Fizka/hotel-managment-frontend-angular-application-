@@ -13,7 +13,27 @@ export class WorkerBoardComponent implements OnInit {
 
   constructor(private workerService : WorkerService) { }
   workerArr: Observable <Worker[]>;
+  title = 'Pracownicy';
 
+  defaultColDef = {
+    sortable: true,
+    filter: true
+  };
+
+  columnDefs = [
+    {  headerName: "Imie",field: 'firstname',sortable: true,  filter: true },
+    {  headerName: "Nazwisko",field: 'lastname',sortable: true,filter: true },
+    {  headerName: "Login",field: 'login',sortable: true,filter: true },
+    {  headerName: "Hasło",field: 'password',sortable: true,filter: true },
+    {  headerName: "E-mail",field: 'email',sortable: true,filter: true },
+    {  headerName: "Obowiązki",field: 'responsibilities',sortable: true,filter: true, width: 500 },
+    {  headerName: "Data Zatrudnienia",field: 'dateofemployment',sortable: true,filter: true },
+    {  headerName: "Data Urodzenia",field: 'dateofbirth',sortable: true,filter: true },
+    {  headerName: "Uprawnienia",field: 'privileges',sortable: true,filter: true },
+    {  headerName: "Godziny Pracy",field: 'workinghours',sortable: true,filter: true },
+    {  headerName: "Pensja",field: 'salary',sortable: true,filter: true }
+  ];
+  rowData = [];
 
   ngOnInit() {
     this.reloadData();
@@ -21,6 +41,9 @@ export class WorkerBoardComponent implements OnInit {
 
   reloadData(){
     this.workerArr = this.workerService.getAllWorkers();
+     this.workerService.getAllWorkers().subscribe( (data) => {
+      this.rowData = data;
+    });
   }
 
 }

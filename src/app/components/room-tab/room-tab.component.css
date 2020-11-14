@@ -1,0 +1,27 @@
+#karta{
+  width: 700px;
+  height: 700px;
+  margin: 0px 200px 0px 200px;
+}
+
+card-body{
+  width: 100%
+}
+
+#zdjecie{
+  background-image: url('../../../assets/pok2.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 600px;
+  margin: 0px 40px 0px 40px
+}
+
+#zawartosc{
+  text-align: center;
+}
+
+
+.card{
+  background: #4E4F63 !important;
+}
