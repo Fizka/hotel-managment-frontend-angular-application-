@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit, Renderer, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import {Room} from '../../models/room';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../service/room.service';
@@ -14,7 +14,7 @@ import {Reservation} from '../../models/reservation';
 
 export class ReservationCreateComponent implements OnInit{
 
-  constructor(rnd: Renderer, private router : Router, private route: ActivatedRoute,
+  constructor(rnd: Renderer2, private router : Router, private route: ActivatedRoute,
               private roomService: RoomService, private reservationservice: ReservationService) { }
 
   months = ["January", "February", "March", "April",
