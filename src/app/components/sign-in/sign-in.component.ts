@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {WorkerService} from '../../service/worker.service';
-import { Worker } from '../../models/worker'
+import {Worker} from '../../models/worker';
 import {MenuComponent} from '../../page/menu/menu.component';
 import {CustomerService} from '../../service/customer.service';
 
@@ -13,50 +13,47 @@ import {CustomerService} from '../../service/customer.service';
 
 export class SignInComponent implements OnInit {
 
-  user : Worker;
+  user: Worker;
   loginPodany: string;
   passwordPodane: string;
-  constructor(private WS: WorkerService, private router: Router, private menu : MenuComponent) { };
+
+  constructor(private WS: WorkerService, private router: Router, private menu: MenuComponent) {
+  };
 
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit() {
     this.findWorker(this.loginPodany);
   }
 
-  private findWorker(login){
-
+  private findWorker(login) {
     this.WS.getWorkerBylogin(login).subscribe(
       data => {
         this.user = data as Worker;
         console.log(data);
-        if(this.loguj(this.passwordPodane)){
+        if (this.loguj(this.passwordPodane)) {
           sessionStorage.setItem('login', JSON.stringify(this.user));
-          alert("Udało się");
+          alert('Udało się');
           this.menu.IsOut();
-        }else{
-          alert("Blad logowania");
+        } else {
+          alert('Blad logowania');
         }
       },
       error => console.log(error));
-
   }
 
-  loguj( password ) {
-
-    if(this.user !== undefined){
-    if( password == this.user.password ){
-      return true;
-    }else{
-      return false;
+  loguj(password) {
+    if (this.user !== undefined) {
+      if (password == this.user.password) {
+        return true;
+      } else {
+        return false;
+      }
     }
-    }
-
   }
 
-
-  logOut(){
+  logOut() {
     sessionStorage.clear();
   }
 

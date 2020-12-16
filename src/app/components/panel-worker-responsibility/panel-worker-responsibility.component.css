@@ -1,0 +1,49 @@
+.wstaw {
+  padding: 40px 20px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.card{
+  box-shadow: -5px -5px 15px black;
+}
+
+.panel {
+  box-sizing: content-box;
+  flex-wrap: wrap;
+  display: block;
+  justify-content: space-around;
+  width: 360px;
+  height: 320px;
+}
+
+.card-body {
+  height: 200px;
+}
+
+.panelHelp {
+  display: block;
+  flex-wrap: nowrap;
+  text-align: center;
+  margin: 0 40px 40px 40px;
+}
+
+.responsibility-card {
+  margin: 30px;
+}
+
+.responsibility-card:hover {
+  transform: scale(1.2);
+}
+
+.panelHelp h3 {
+  color: white !important;
+  font-size: 20px !important;
+}
+
+
+
+

@@ -1,0 +1,51 @@
+#pola {
+  box-sizing: content-box;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+#data {
+  padding: 30px;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+.inputform {
+  margin: 40px 0px;
+  background: none;
+  border-bottom-color: whitesmoke;
+  box-shadow: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+  width: 540px;
+  color: whitesmoke;
+}
+
+.buttonSo {
+  background: transparent;
+  width: 300px;
+  text-align: center;
+  font-size: 16px;
+  color: whitesmoke;
+  border: none;
+  border: none;
+}
+
+.buttonSo:hover {
+  transform: scale(1.1);
+}
+
+#formUpr {
+  display: inline;
+}
+
+.form-control{
+  background: none;
+  color: whitesmoke;
+}
+
+

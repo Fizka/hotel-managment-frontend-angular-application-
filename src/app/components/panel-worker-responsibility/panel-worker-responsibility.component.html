@@ -1,0 +1,22 @@
+<div class="panelHelp">
+  <button type="button" class="btn btn-primary" (click)="newResponsibility()">Dodaj Obowiązek</button>
+  <br/>
+  <br/>
+  <h3>Wyszukaj obowiązki pracownika:</h3>
+  <input type="text" name="inputfilter" required [(ngModel)]="filter" (keyup)="filterFunction()">
+</div>
+<div class="wstaw">
+  <div class="responsibility-card" *ngFor="let responsibility of responsibility">
+      <div class="panel card text-white bg-dark mb-3" style="max-width: 20rem;">
+        <div class="card-header"> Zadanie: {{responsibility.nameResponsibility}}</div>
+        <div class="card-body">
+          <h4 class="card-title"> Status:   {{responsibility.status}}</h4>
+          <h4 class="card-title"> Przypisane:    {{responsibility.responsible}}</h4>
+          <p class="card-text"> Opis:  {{responsibility.description}}</p>
+        <button type="button" class="btn btn-primary" [hidden]="checkStatus(responsibility.status)" (click)="zmienStatus(responsibility)">
+          Zmien Status
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

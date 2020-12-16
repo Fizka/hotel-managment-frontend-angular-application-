@@ -1,4 +1,20 @@
-<div *ngIf="customer">
-  <h2> <a (click)="Goto()">  {{customer.firstname }}  {{customer.lastname}}  </a> </h2> <br/>
-  <label>E-mail: </label> {{customer.email}} <br/>
+<div id="pola">
+  <div id="data">
+    <div *ngIf="customer">
+      <label>Imie</label>
+      <input class="inputform" type="text" name="firstname" id="firstname" required [(ngModel)]="customer.firstname"
+             value="{{customer.firstname}}"><br/> <br/>
+      <label>Nazwisko: </label>
+      <input class="inputform" type="text" name="lastname" id="lastname" required [(ngModel)]="customer.lastname"
+             value="{{customer.lastname}}"><br/> <br/>
+      <label>Email</label>
+      <input class="inputform" type="text" name="email" id="email" required [(ngModel)]="customer.email"
+             value="{{customer.email}}"><br/> <br/>
+      <label>login</label>
+      <input class="inputform" name="login" id="login" required [(ngModel)]="customer.login" value="{{customer.login}}">
+      <br/>
+      <button type="button" class="btn btn-primary" (click)="edytuj()"> Zapisz zmiany</button>
+      <button type="button" class="btn btn-primary" (click)="changePassword()">Nowe hasło</button>
+    </div>
+  </div>
 </div>

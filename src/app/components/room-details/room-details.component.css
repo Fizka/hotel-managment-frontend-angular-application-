@@ -14,3 +14,51 @@
 .card{
   background: #4E4F63 !important;
 }
+
+.comment {
+  border: 1px solid #46494f;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 0 1px 5px black;
+  box-shadow: -5px -5px 15px black;
+  font-size: 18px;
+  position: relative;
+  color: black;
+  line-height: 1.54em;
+  margin-left: 120px;
+  margin-right: 120px;
+  min-height: 60px;
+  padding: 10px 20px;
+}
+
+.comment::before {
+  content: ' ';
+  display: block;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  height: 20px;
+  width: 17px;
+  background-color: #fff;
+  border-top: 1px solid #d8dee5;
+  border-left: 1px solid #d8dee5;
+  position: absolute;
+  left: -10px;
+  top: -1px;
+  -ms-transform: skewX(45deg);
+  -webkit-transform: skewX(45deg);
+  transform: skewX(45deg);
+  z-index: 1;
+}
+
+.comment:hover{
+  transform: scale(1.2);
+}
+
+.comment p {
+  padding: 8px 30px;
+  position: relative;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.input-comment{
+  margin: 100px 20px 50px 20px;
+}

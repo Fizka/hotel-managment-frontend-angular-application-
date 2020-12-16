@@ -9,16 +9,17 @@ import {Router} from '@angular/router';
 })
 export class WorkerTabComponent implements OnInit {
 
-  @Input() worker : Worker;
-  id : any;
+  @Input() worker: Worker;
+  id: any;
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
 
-  Goto(){
-    this.router.navigate(['workerdetails', this.worker.idWorker])
+  Goto() {
+    this.router.navigate(['workerdetails', this.worker.idWorker]);
   }
 
 }

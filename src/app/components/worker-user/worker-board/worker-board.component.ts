@@ -3,6 +3,8 @@ import {RoomService} from '../../../service/room.service';
 import {Observable} from 'rxjs';
 import {Room} from '../../../models/room';
 import {WorkerService} from '../../../service/worker.service';
+import {EditCellRenderComponent} from '../../room-grid/edit-cell-render.component';
+import {WorkerEditTemplateComponent} from './worker-edit-template.component';
 
 @Component({
   selector: 'app-worker-board',
@@ -21,6 +23,10 @@ export class WorkerBoardComponent implements OnInit {
   };
 
   columnDefs = [
+    {
+      headerName: '', width: 180, cellRendererFramework: WorkerEditTemplateComponent,
+      sortable: false, filter: false, singleClickEdit: false, editable: false
+    },
     {  headerName: "Imie",field: 'firstname',sortable: true,  filter: true },
     {  headerName: "Nazwisko",field: 'lastname',sortable: true,filter: true },
     {  headerName: "Login",field: 'login',sortable: true,filter: true },

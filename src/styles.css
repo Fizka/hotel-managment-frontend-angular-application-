@@ -1,6 +1,6 @@
 @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
 @import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
-
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine-dark.css";
 
 html{
   background: #2e303d;
@@ -9,7 +9,7 @@ html{
 body{
   margin: 0px;
   font-family: 'Raleway', sans-serif, cursive;
-  font-size: 16px;
+  font-size: 20px;
   color: black;
   z-index: 1;
 }
@@ -25,3 +25,16 @@ body{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.ag-theme-alpine-dark .ag-cell{
+  line-height: unset !important;
+  margin: 20px;
+}
+
+.ag-body {
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+}
+

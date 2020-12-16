@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ReservationService} from '../../service/reservation.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-reservation-board',
@@ -12,18 +13,21 @@ export class ReservationBoardComponent implements OnInit {
   defaultColDef = {
     sortable: true,
     filter: true,
-    resizable: true
+    resizable: true,
+    wrapText: true
   };
   columnDefs = [
     {headerName: 'Data Rezerwacji', field: 'startData', sortable: true, filter: true},
     {headerName: 'Koniec Rezerwacji', field: 'endData', sortable: true, filter: true},
     {headerName: 'Długość pobytu [dni]', field: 'howLong', sortable: true, filter: true},
     {headerName: 'Klient', field: 'customer', sortable: true, filter: true},
-    {headerName: 'Pokoj', field: 'room', sortable: true, filter: true}
+    {headerName: 'Pokoj', field: 'room', sortable: true, filter: true},
+    {headerName: 'Status', field: 'status', sortable: true, filter: true}
   ];
   rowData = [];
 
-  constructor(private reservationServic: ReservationService) {
+  constructor(private reservationServic: ReservationService,
+              private router: Router) {
   }
 
   onGridReady(params) {
@@ -41,4 +45,6 @@ export class ReservationBoardComponent implements OnInit {
       console.log(data);
     });
   }
+
+
 }

@@ -1,31 +1,43 @@
 <div [style.visibility]="visible" [style.opacity]="opacity" id="menu">
   <ul>
     <li>
-      <a *ngIf="!checker()" href="{{statelog}}" (click)="onSubmit()">{{logowanie}}</a>
+      <a  href="log" (click)="onSubmit()">{{logowanie}}</a>
     </li>
     <li>
-      <a href="roomboard" > Oferty </a>
+      <a href="roomboard">Oferty</a>
     </li>
     <li>
-      <a  href="workercreation" > Nowy Pracownik </a>
+      <a href="workercreation">Nowy Pracownik</a>
     </li>
     <li>
-      <a  href="e_worker" > e-Worker </a>
+      <a href="profil">Profil</a>
     </li>
     <li>
-      <a  href="workerboard" > Pracownicy </a>
+      <a href="roomadd">Dodaj Pokoj</a>
     </li>
     <li>
-      <a  href="customerboard" > Klient Board </a>
+      <a href="workergrid">Room Grid</a>
     </li>
     <li>
-      <a  href="reservationboard" > Rezerwacje </a>
+      <a href="panel">panel</a>
     </li>
     <li>
-      <a  href="roomgrid" > Pokoje </a>
+      <a href="e_worker">e-Worker</a>
     </li>
     <li>
-      <a *ngIf="!IsLogged()" href="signup" > Rejestracja</a>
+      <a href="workerboard">Pracownicy</a>
+    </li>
+    <li>
+      <a href="customerboard">Klient Board</a>
+    </li>
+    <li>
+      <a href="reservationboard">Rezerwacje</a>
+    </li>
+    <li>
+      <a href="roomgrid">Pokoje</a>
+    </li>
+    <li>
+      <a *ngIf="!IsLogged()" href="signup">Rejestracja</a>
     </li>
   </ul>
 </div>

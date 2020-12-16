@@ -11,6 +11,6 @@
   <label>Czas Pracy: </label>  {{worker.workinghours}} <br/>
   <label>Pensja:  </label>  {{worker.salary}} <br/>
 </div>
-<button class="btn-primary" (click)="GotoEditWorker()" [hidden]="!isVisible">Edytuj</button>
+<button type="button" class="btn btn-primary" (click)="GotoEditWorker()" [hidden]="!isVisible">Edytuj</button>
 <app-worker-edit [worker]="worker" [hidden]="isVisible"></app-worker-edit>
 

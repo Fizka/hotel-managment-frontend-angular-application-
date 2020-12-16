@@ -1,40 +1,41 @@
 <div id="pola">
   <div id="data">
     <form [formGroup]="uprawnieniaForm" (ngSubmit)="sub()">
-
-
-    <input type="text" class="inputform" name="username" placeholder="Login" id="username"  formControlName="login" >
-    <br/>
-    <input type="password" class="inputform" name="password" placeholder="Hasło" id="password"  formControlName="passwordOrg">
-    <br/>
-    <input type="password" class="inputform" name="password" placeholder="Powtórz hasło" id="passwordTwo"  formControlName="password">
-    <br/>
-    <input type="text" class="inputform" name="email" placeholder="email" id="email"  formControlName="email">
-    <br/>
-    <input type="text" class="inputform" name="position" placeholder="stanowisko" id="position"  formControlName="position">
-    <br/>
-    <input type="text" class="inputform" name="firstname" placeholder="Imie" id="firstname"  formControlName="firstname">
-    <br/>
-    <input type="text" class="inputform" name="lastname" placeholder="nazwisko" id="lastname"  formControlName="lastname">
-    <br/>
-    <input type="text" class="inputform" name="pesel" placeholder="pesel" id="pesel"  formControlName="pesel">
-    <br/>
-    <label>Uprawnienia</label>
-      <select  formControlName="uprawnienia" >
-     <option *ngFor="let upr of uprawnienia" [ngValue]="upr.id"> {{upr.stan}}</option>
-    </select>
-
-    <br/>
-    <br/>
-    <label>   Data Zatrudnienia:  </label>
-    <input type="Date" name="dateofbirth"  formControlName="dateofemployment">
-    <br/>
-    <br/>
-    <label>   Data Urodzenia:  </label>
-    <input type="Date" name="dateofemployment"  formControlName="dateofbirth">
-    <br/>
-    <br/>
-    <button class="buttonSo"  type="submit">Zarejestruj</button>
+      <input type="text" class="inputform" name="username" placeholder="Login" id="username" formControlName="login">
+      <br/>
+      <input type="password" class="inputform" name="password" placeholder="Hasło" id="password"
+             formControlName="passwordOrg">
+      <br/>
+      <input type="text" class="inputform" name="password" placeholder="Powtórz hasło" id="passwordTwo"
+             formControlName="password">
+      <br/>
+      <input type="text" class="inputform" name="email" placeholder="email" id="email" formControlName="email">
+      <br/>
+      <input type="text" class="inputform" name="position" placeholder="stanowisko" id="position"
+             formControlName="position">
+      <br/>
+      <input type="text" class="inputform" name="firstname" placeholder="Imie" id="firstname"
+             formControlName="firstname">
+      <br/>
+      <input type="text" class="inputform" name="lastname" placeholder="nazwisko" id="lastname"
+             formControlName="lastname">
+      <br/>
+      <input type="text" class="inputform" name="pesel" placeholder="pesel" id="pesel" formControlName="pesel">
+      <br/>
+      <label>Uprawnienia</label>
+      <select formControlName="uprawnienia">
+        <option *ngFor="let upr of uprawnienia" [ngValue]="upr.id"> {{upr.stan}}</option>
+      </select>
+      <br/>
+      <label> Data Zatrudnienia: </label>
+      <input type="Date" name="dateofbirth" formControlName="dateofemployment">
+      <br/>
+      <br/>
+      <label> Data Urodzenia: </label>
+      <input type="Date" name="dateofemployment" formControlName="dateofbirth">
+      <br/>
+      <br/>
+      <button type="button" class="btn btn-primary" type="submit">Zarejestruj</button>
     </form>
   </div>
 </div>

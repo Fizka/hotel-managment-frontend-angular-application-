@@ -2,8 +2,15 @@
 .elemy{
   margin: 20px;
   text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
   padding: 5px;
   flex-flow: row;
+  width: 750px;
+  height: 450px;
+  min-width: 750px;
+  min-height: 450px;
 }
 
 .danepok{
@@ -12,7 +19,6 @@
   text-align: center;
   flex-wrap: wrap;
   display: flex;
-  flex-flow: column;
   justify-content: space-around;
   align-items: center;
 }

@@ -21,12 +21,14 @@ export class MenuComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-      this.checker();
+
     }
 
     onSubmit(){
       if(this.IsLogged()){
         sessionStorage.clear();
+      }else{
+
       }
     }
 
@@ -46,19 +48,14 @@ export class MenuComponent implements OnInit {
 
   IsLogged(){
       if(sessionStorage.getItem('login') != null){
+        this.logowanie = 'Wyloguj';
+        this.statelog = '';
         return true;
       }else
+        this.logowanie = 'Zaloguj';
         return false;
     }
 
-  checker(){
-    if(this.IsLogged()){
-      this.logowanie = 'Wyloguj';
-      this.statelog = '';
-    }else {
-      this.logowanie = 'Zaloguj';
-    }
-  }
 
   IsOut(){
     alert("Zmiana!")

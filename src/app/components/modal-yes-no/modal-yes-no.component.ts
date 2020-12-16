@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
+import {RoomService} from '../../service/room.service';
 
 @Component({
   selector: 'app-modal-yes-no',
@@ -7,17 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalYesNoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<ModalYesNoComponent>) { }
+  value: boolean;
 
   ngOnInit() {
   }
 
-  modifi(){
-
+  setValue(val){
+    this.dialogRef.close(val);
   }
 
-  reset(){
-
-  }
 
 }

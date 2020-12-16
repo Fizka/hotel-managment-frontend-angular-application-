@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Room} from '../../../models/room';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {RoomService} from '../../../service/room.service';
 import {Worker} from '../../../models/worker';
 import {WorkerService} from '../../../service/worker.service';
 
@@ -12,32 +10,33 @@ import {WorkerService} from '../../../service/worker.service';
 })
 export class WorkerComponent implements OnInit {
 
-  worker : Worker;
-  id : any;
-  isVisible : boolean = true;
+  worker: Worker = new Worker();
+  id: any;
+  isVisible: boolean = true;
 
-  constructor(private router : Router, private route: ActivatedRoute, private workerService: WorkerService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private workerService: WorkerService) {
+  }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.GetWorker();
   }
 
-  GetWorker(){
+  GetWorker() {
     this.workerService.getWroker(this.id).subscribe(
       (data) => {
-        this.worker = data
+        this.worker = data;
       },
       error => console.log(error)
-    )
+    );
   }
 
-  GotoEditWorker(){
-   //wyswietlanie komponentu
+  GotoEditWorker() {
+    //wyswietlanie komponentu
     this.isVisible = false;
   }
 
-  Zapisz(){
+  Zapisz() {
 
   }
 

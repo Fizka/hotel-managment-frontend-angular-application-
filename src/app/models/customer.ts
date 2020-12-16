@@ -6,4 +6,7 @@ export class Customer {
   password : string;
   privileges : number;
   email : string;
+
+  constructor(){
+  }
 }

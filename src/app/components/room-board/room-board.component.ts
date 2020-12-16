@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Room} from '../../models/room';
 import {RoomService} from '../../service/room.service';
@@ -10,15 +10,16 @@ import {RoomService} from '../../service/room.service';
 })
 export class RoomBoardComponent implements OnInit {
 
-  constructor(private roomService : RoomService) { }
-  roomArr: Observable <Room[]>;
+  constructor(private roomService: RoomService) {
+  }
 
+  roomArr: Observable<Room[]>;
 
   ngOnInit() {
     this.reloadData();
   }
 
-  reloadData(){
+  reloadData() {
     this.roomArr = this.roomService.getRoomsList();
   }
 }

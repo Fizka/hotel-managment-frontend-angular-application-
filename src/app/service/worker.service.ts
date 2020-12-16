@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -10,17 +10,18 @@ export class WorkerService {
 
   private baseUrl = 'http://localhost:8080/worker';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  getWroker(idWorker : number): Observable<any>{
+  getWroker(idWorker: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/worker/${idWorker}`);
   }
 
-   getWorkerBylogin(login : string) : Observable<any>{
+  getWorkerBylogin(login: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/login/${login}`);
   }
 
-  createWorker(worker: any): Observable<any>{
+  createWorker(worker: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/new`, worker);
   }
 
@@ -28,4 +29,11 @@ export class WorkerService {
     return this.http.get(this.baseUrl);
   }
 
+  updateWorker(idWorker: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/change/${idWorker}`, value);
+  }
+
+  deleteWorker(idWorker: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${idWorker}`);
+  }
 }

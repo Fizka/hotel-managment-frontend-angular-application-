@@ -1,7 +1,9 @@
-<p> Czy na pewno chcesz edytować? </p>
-<button (click)="reset()">
-  Yes
-</button>
-<button (click)="modifi()">
-  No
-</button>
+
+  <p> Czy jesteś pewien? </p>
+  <button type="button" class="btn btn-primary" (click)="setValue(true)">
+    Yes
+  </button>
+  <button type="button" class="btn btn-primary" (click)="setValue(false)">
+    No
+  </button>
+

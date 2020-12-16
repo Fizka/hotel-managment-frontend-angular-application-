@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -9,9 +9,10 @@ export class RoomService {
 
   private baseUrl = 'http://localhost:8080/room';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  getRoom(idRoom : number): Observable<any> {
+  getRoom(idRoom: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/room/${idRoom}`);
   }
 

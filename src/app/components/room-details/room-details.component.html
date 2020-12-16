@@ -1,16 +1,37 @@
 <div *ngIf="room">
   <div id="karta">
-        <div class="card border-primary mb-3 ">
-          <div class="card-header">{{room.title}}</div>
-          <br/>
-          <div class="card-body">
-            <div class="form-group"><label>Numer Pokoju: </label> {{room.numberRM}} <br/></div>
-            <div class="form-group"><label>Piętro: </label> {{room.floor}} <br/></div>
-            <div class="form-group"><label>Cena: </label> {{room.price}} <br/></div>
-            <div class="form-group"><label>Maksymalna Liczba osób: </label> {{room.maxCapacity}} <br/></div>
-            <div class="form-group"><label>Opis </label> {{room.description}} <br/></div>
-            <Button (click)="MakeReervation()"> Zarezerwuj</Button>
-          </div>
+    <div class="card border-primary mb-3 ">
+      <div class="card-header">{{room.title}}</div>
+      <br/>
+      <div class="card-body">
+        <img src="/assets/{{room.urlImages}}">
+        <div class="form-group"><label>.Numer Pokoju: </label> {{room.numberRM}} <br/></div>
+        <div class="form-group"><label>Piętro: </label> {{room.floor}} <br/></div>
+        <div class="form-group"><label>Cena: </label> {{room.price}} <br/></div>
+        <div class="form-group"><label>Maksymalna Liczba osób: </label> {{room.maxCapacity}} <br/></div>
+        <div class="form-group"><label>Opis </label> {{room.description}} <br/></div>
+        <Button type="button" class="btn btn-primary" (click)="MakeReervation()"> Zarezerwuj</Button>
+      </div>
     </div>
   </div>
 </div>
+<div class="input-comment">
+  <div class="form-group"><label>Dodaj komentarz: </label>
+    <textarea class="form-control" name="description" [(ngModel)]="comment.textValue" [defaultValue]="'Brak Komentarza'" placeholder="Wpisz komentarz i dodaj ocene..." rows="8"></textarea>
+    <div class="form-group">
+      Wybierz ocene:
+      <select name="mark" [(ngModel)]="comment.mark">
+        <option name="mark" *ngFor="let m of marks" [ngValue]="m"> {{m}} </option>
+      </select>
+      <button type="button" class="btn btn-primary" (click)="submitComment()">Dodaj</button>
+    </div>
+    <br/></div>
+</div>
+
+<div  *ngFor="let com of addedComments">
+  <div class="comment">
+    ocena: {{com.mark}}/5
+  <p *ngIf="com.textValue">{{com.textValue}}</p>
+  </div>
+</div>
+

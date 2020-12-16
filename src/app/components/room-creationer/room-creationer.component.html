@@ -1,0 +1,26 @@
+<div id="pola">
+  <div id="data">
+    <form [formGroup]="uprawnieniaForm" (ngSubmit)="sub()">
+      <input type="text" class="inputform" name="floor" placeholder="piętro" id="floor"
+             formControlName="floor">
+      <br/>
+      <input type="text" class="inputform" name="numberRM" placeholder="numer pokoju" id="numberRM"
+             formControlName="numberRM">
+      <br/>
+      <input type="text" class="inputform" name="price" placeholder="cena" id="price"
+             formControlName="price">
+      <br/>
+      <textarea type="text" class="form-control" name="description" placeholder="opis" id="description"
+                formControlName="description" rows="14"> </textarea>
+      <br/>
+      <input type="text" class="inputform" name="maxCapacity" placeholder="maksymalna liczba osob" id="maxCapacity"
+             formControlName="maxCapacity">
+      <br/>
+      <textarea type="text" class="form-control" name="title" placeholder="tytuł" id="title" formControlName="title"
+                rows="5"> </textarea>
+      <br/>
+      <br/>
+      <button type="button" class="btn btn-primary" type="submit">Dodaj</button>
+    </form>
+  </div>
+</div>

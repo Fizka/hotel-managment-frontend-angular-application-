@@ -9,15 +9,26 @@ import {Router} from '@angular/router';
 })
 export class RoomTabComponent implements OnInit {
 
-  @Input() room : Room;
-  id : any;
+  @Input() room: Room;
+  id: any;
+  urlimages: string[];
 
-  constructor(private router : Router) { }
 
-  ngOnInit() {
+  constructor(private router: Router) {
   }
 
-  Goto(){
+  ngOnInit() {
+    this.urlimages = new Array();
+    this.getPictures();
+  }
+
+  getPictures() {
+    for (let i = 0; i <= 83; i++) {
+      this.urlimages.push(i + '.png');
+    }
+  }
+
+  Goto() {
     this.router.navigate(['roomdetails', this.room.idRoom])
   }
 

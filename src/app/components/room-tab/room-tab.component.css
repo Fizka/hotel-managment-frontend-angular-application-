@@ -1,12 +1,3 @@
-#karta{
-  width: 700px;
-  height: 700px;
-  margin: 0px 200px 0px 200px;
-}
-
-card-body{
-  width: 100%
-}
 
 #zdjecie{
   background-image: url('../../../assets/pok2.jpg') ;
@@ -18,10 +9,36 @@ card-body{
 }
 
 #zawartosc{
-  text-align: center;
+  width: 100%;
+  text-align: left;
+  display: block;
 }
 
+.card-header h3{
+  font-size: 20px;
+}
+
+.card-header{
+  text-align: center;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.one-card-body{
+  display: block;
+}
 
 .card{
-  background: #4E4F63 !important;
+  flex-direction: row;
+  width: 750px;
+  height: 450px;
+  box-shadow: -5px -5px 15px black;
 }
+
+.card-body{
+  width: 50%;
+}
+

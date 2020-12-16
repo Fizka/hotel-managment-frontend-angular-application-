@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -9,21 +9,26 @@ export class ReservationService {
 
   private baseUrl = 'http://localhost:8080/reservation';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  getReservation(idReservation : number): Observable<any> {
+  getReservation(idReservation: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/reservation/${idReservation}`);
   }
 
-  getReservationByRoomId(roomId : number): Observable<any> {
+  getReservationByRoomId(roomId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/roomId/${roomId}`);
   }
 
-  getReservationByCustomerId(customerId : number): Observable<any> {
+  getReservetByRoomId(roomId: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/reservet/${roomId}`);
+  }
+
+  getReservationByCustomerId(customerId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/customerId/${customerId}`);
   }
 
-  createReservation(idRoom: number, idCustomer : number,  reservation: any): Observable<any> {
+  createReservation(idRoom: number, idCustomer: number, reservation: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/new/${idRoom}/${idCustomer}`, reservation);
   }
 

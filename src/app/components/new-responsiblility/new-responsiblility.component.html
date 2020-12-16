@@ -1,0 +1,29 @@
+<div class="jumbotron">
+<form>
+  <fieldset>
+    <div>
+      <input class="inputform" type="text" name="nameResponsibility" placeholder="'Tytuł zadania'" id="nameResponsibility" required
+             [(ngModel)]="responsibility.nameResponsibility"><br/> <br/>
+      <div class="margin-popup">
+      <h3>Odpowiedzialny: </h3>
+      <form [formGroup]="contactForm">
+        <select name="worker" class="form-control" formControlName="worker">
+          <option name="worker" [ngValue]="null" disabled>Wybierz Pracownika</option>
+          <option name="worker" *ngFor="let worker of workers | async"
+                  [ngValue]="worker.idWorker"> {{worker.firstname + ' ' + worker.lastname}}</option>
+        </select>
+      </form>
+      <br/> <br/>
+      <div class="form-group"><h3>Opis: </h3>
+        <textarea class="form-control" name="description" required [(ngModel)]="responsibility.description"
+                  rows="8"></textarea>
+        <br/></div>
+    </div>
+      <div class="btn-display-popup">
+    <button type="button" class="btn btn-primary btn-lg" (click)="onReset()">Cofnij</button>
+    <button type="button" class="btn btn-primary btn-lg" (click)="onSave()">Zapisz</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>

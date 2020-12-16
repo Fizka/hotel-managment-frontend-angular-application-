@@ -1,0 +1,12 @@
+<ag-grid-angular
+  style="width: 100%; height: 700px;"
+  class="ag-theme-alpine-dark"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  (gridReady)="onGridReady($event)"
+  [headerHeight]="100"
+  [rowHeight]="80"
+  (cellClicked)="goToReservation($event)">
+</ag-grid-angular>
+
