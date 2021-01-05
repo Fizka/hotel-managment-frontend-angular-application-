@@ -40,6 +40,9 @@ import { NewResponsiblilityComponent } from './components/new-responsiblility/ne
 import {CustomerEditPassComponent} from './components/customer-user/customer-details/customer-edit-pass.component';
 import {BlokCustomerComponent} from './components/customer-user/customer-board/blok-customer.component';
 import { GridRoomWorkerComponent } from './components/grid-room-worker/grid-room-worker.component';
+import {RoomService} from './service/room.service';
+import {ReservationService} from './service/reservation.service';
+
 
 @NgModule({
   declarations: [
@@ -88,7 +91,8 @@ import { GridRoomWorkerComponent } from './components/grid-room-worker/grid-room
     MatFormFieldModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [RoomService,
+  ReservationService],
   bootstrap: [AppComponent],
   entryComponents: [ModalYesNoComponent]
 })

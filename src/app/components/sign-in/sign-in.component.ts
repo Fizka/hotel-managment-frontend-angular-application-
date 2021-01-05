@@ -31,10 +31,21 @@ export class SignInComponent implements OnInit {
     this.WS.getWorkerBylogin(login).subscribe(
       data => {
         this.user = data as Worker;
-        console.log(data);
         if (this.loguj(this.passwordPodane)) {
           sessionStorage.setItem('login', JSON.stringify(this.user));
-          alert('Udało się');
+          sessionStorage.setItem('zalogowany', JSON.stringify(true));
+          if(this.user.privileges != -1)
+          {
+            sessionStorage.setItem('uprawnienia', JSON.stringify(true));
+          }else {
+            sessionStorage.setItem('uprawnienia', JSON.stringify(false));
+          }
+          if(this.user.privileges == 999)
+          {
+            sessionStorage.setItem('admin', JSON.stringify(true));
+          }else {
+            sessionStorage.setItem('admin', JSON.stringify(false));
+          }
           this.menu.IsOut();
         } else {
           alert('Blad logowania');

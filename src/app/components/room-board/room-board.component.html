@@ -1,7 +1,22 @@
+<div class="inputs-room">
+  <div class="input-search">
+  <h3>Fraza z tytułu: </h3>
+  <input type="text" class="form-control"  placeholder="Wpisz fraze" [(ngModel)]="serachtext"/>
+  </div>
+  <div class="input-search">
+    <h3>Maksymalna Cena: </h3>
+  <input type="number" class="form-control" placeholder="Wpisz cene maksymalną" [(ngModel)]="serachprice"/>
+  </div>
+  <br/>
+  <button type="button" class="btn btn-primary btn-lg" (click)="filterRoom()">Szukaj</button>
+</div>
+
+<div class="page-margin">
 <div id="tab" >
   <nav class="danepok">
-  <div class="elemy" *ngFor="let roomTamp of  roomArr | async">
+  <div class="elemy" *ngFor="let roomTamp of  roomArr">
    <app-room-tab  [room]='roomTamp'></app-room-tab>
   </div>
   </nav>
+</div>
 </div>

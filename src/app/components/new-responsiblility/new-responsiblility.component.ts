@@ -1,10 +1,11 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {Responsibility} from '../../models/responsibility';
 import {ResponsibilityService} from '../../service/responsibility.service';
 import {WorkerService} from '../../service/worker.service';
 import {Observable} from 'rxjs';
-import {FormBuilder, FormControl, FormControlName, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-responsiblility',
@@ -16,9 +17,9 @@ export class NewResponsiblilityComponent implements OnInit {
   @Input()
   responsibility: Responsibility;
   workers: Observable<any>;
-  contactForm:FormGroup;
+  contactForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private workerService: WorkerService, public dialogRef: MatDialogRef<NewResponsiblilityComponent>, private responsibilityService: ResponsibilityService) {
+  constructor(private fb: FormBuilder, private router: Router, private workerService: WorkerService, public dialogRef: MatDialogRef<NewResponsiblilityComponent>, private responsibilityService: ResponsibilityService) {
   }
 
   ngOnInit() {
@@ -31,13 +32,17 @@ export class NewResponsiblilityComponent implements OnInit {
 
   onSave() {
     this.responsibility.status = 'Do zrobienbia';
-    this.responsibilityService.createResponsibility(this.responsibility, this.contactForm.get('worker').value).subscribe((data)=>
-    console.log(data));
+    this.responsibilityService.createResponsibility(this.responsibility, this.contactForm.get('worker').value).subscribe((data) =>
+      console.log(data));
     this.dialogRef.close(this.responsibility);
     this.reloadData();
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 
-  reloadData(){
+  reloadData() {
     this.workers = this.workerService.getAllWorkers();
   }
 

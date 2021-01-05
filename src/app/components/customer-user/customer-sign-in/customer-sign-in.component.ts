@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Worker} from '../../../models/worker';
-import {WorkerService} from '../../../service/worker.service';
 import {Router} from '@angular/router';
 import {MenuComponent} from '../../../page/menu/menu.component';
 import {CustomerService} from '../../../service/customer.service';
@@ -33,10 +31,12 @@ export class CustomerSignInComponent implements OnInit {
     this.customerService.getCustomerbylogin(login).subscribe(
       data => {
         this.user = data as Customer;
-        console.log(data);
         if (this.loguj(this.passwordPodane)) {
           sessionStorage.setItem('login', JSON.stringify(this.user));
-          alert('Udało się');
+          sessionStorage.setItem('zalogowany', JSON.stringify(true));
+          //TODO - zablokowanie logowania dla upr = -1
+          sessionStorage.setItem('uprawnienia', JSON.stringify(false));
+          sessionStorage.setItem('admin', JSON.stringify(false));
           this.menu.IsOut();
         } else {
           alert('Blad logowania');

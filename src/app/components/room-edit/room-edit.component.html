@@ -1,15 +1,17 @@
-<form>
-  <fieldset>
-<div class="form-group" >
-  <div class="form-group"><label>Tytuł: </label>
-    <textarea class="form-control" name="title" required [(ngModel)]="room.title" value="{{room.title}}" rows="3"></textarea>
+<div class="jumbotron">
+  <form class="edit-modal">
+      <div class="form-group">
+        <div class="form-group"><h2>Tytuł: </h2>
+          <textarea class="form-control" name="title" required [(ngModel)]="room.title" value="{{room.title}}"
+                    rows="6"></textarea>
 
-  </div>
-  <div class="form-group"><label>Opis: </label>
-    <textarea class="form-control" name="description" required [(ngModel)]="room.description" value="{{room.description}}" rows="8"></textarea>
-    <br/></div>
+        </div>
+        <div class="form-group"><h2>Opis: </h2>
+          <textarea class="form-control" name="description" required [(ngModel)]="room.description"
+                    value="{{room.description}}" rows="12"></textarea>
+          <br/></div>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg" (click)="onReset()">Wyjdź</button>
+      <button type="button" class="btn btn-primary btn-lg" (click)="onSave()">Zapisz</button>
+  </form>
 </div>
-<button type="button" class="btn btn-primary" (click)="onReset()">Close</button>
-<button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
-  </fieldset>
-</form>

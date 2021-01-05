@@ -10,12 +10,13 @@ import {RoomGridComponent} from './room-grid.component';
 @Component({
   selector: 'edit-cell-render',
   template: `
-      <button class="btn-primary" style="width: 60px; height: 24px; margin: 0px; text-align: center; "
-              (click)="editRow(this.params.data)">Edytuj
+      <button class="btn-icony-edit btn-icony"
+              (click)="editRow(this.params.data)">
       </button>
-      <button class="btn-primary" style="width: 60px; height: 24px; margin: 0px; text-align: center; "
-              (click)="deleteRow(this.params.data)">Usuń
+      <button class="btn-icony-del btn-icony"
+              (click)="deleteRow(this.params.data)">
       </button>`,
+  styleUrls: ['./room-grid.component.css']
 })
 export class EditCellRenderComponent implements AgRendererComponent {
 
@@ -25,12 +26,11 @@ export class EditCellRenderComponent implements AgRendererComponent {
   }
 
   editRow(value) {
-    alert(value.idRoom);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.id = 'modal-component';
-    dialogConfig.height = '700px';
+    dialogConfig.height = '820px';
     dialogConfig.width = '600px';
     dialogConfig.data = value;
     const modalDialog = this.matDialog.open(RoomEditComponent, dialogConfig);
@@ -43,20 +43,20 @@ export class EditCellRenderComponent implements AgRendererComponent {
   }
 
   deleteRow(value) {
-    alert(value.idRoom);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.id = 'modal-component';
-    dialogConfig.height = '300px';
-    dialogConfig.width = '300px';
+    dialogConfig.height = '250px';
+    dialogConfig.width = '290px';
     dialogConfig.data = value;
     const modalDialog = this.matDialog.open(ModalYesNoComponent, dialogConfig);
     modalDialog.afterClosed().subscribe(
       data => {
         (data) ? this.roomService.deleteRoom(value.idRoom)
           .subscribe((data) => this.reload.reloadData()) : console.log('Nie usuniete!');
-      }
+      }, error => this.reload.reloadData()
+      , () => this.reload.reloadData()
     );
 
   }

@@ -9,11 +9,9 @@
 
 #karta{
   margin: 10px;
+  font-size: 20px;
 }
 
-.card{
-  background: #4E4F63 !important;
-}
 
 .comment {
   border: 1px solid #46494f;
@@ -50,6 +48,20 @@
 
 .comment:hover{
   transform: scale(1.2);
+}
+
+.img-cards{
+  text-align: left;
+
+}
+
+.card{
+flex-direction: initial !important;
+}
+
+.page-margin{
+  margin: 0px 200px 0px 200px;
+  padding: 30px;
 }
 
 .comment p {

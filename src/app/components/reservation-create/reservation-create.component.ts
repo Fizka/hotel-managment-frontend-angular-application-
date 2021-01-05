@@ -8,6 +8,8 @@ import {Reservation} from '../../models/reservations';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Reservet} from '../../models/reservet';
 import {Customer} from '../../models/customer';
+import {CustomerService} from '../../service/customer.service';
+import {MenuComponent} from '../../page/menu/menu.component';
 
 @Component({
   selector: 'app-reservation-create',
@@ -22,7 +24,9 @@ export class ReservationCreateComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute,
               private roomService: RoomService,
-              private reservationservice: ReservationService) {
+              private reservationservice: ReservationService,
+              private customerService: CustomerService,
+              public menuchecker: MenuComponent) {
   }
 
   customer: Customer;
@@ -33,6 +37,7 @@ export class ReservationCreateComponent implements OnInit {
   contactForm: FormGroup;
   nazwaAktualnegoMiesiaca: string;
   pierwszyDzienTygodnia: number;
+  customers: Observable<any>;
 
   wolne: number[] = [101, 80];
   dni = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18',
@@ -52,7 +57,7 @@ export class ReservationCreateComponent implements OnInit {
   rzeczywistosc: any[];
   room: Room;
   todaydate = new Date();
-  id: any;
+  id: any = 0;
   reservationArr: Observable<Reservation[]>;
   EndDate: Date;
   StartDate: Date;
@@ -60,7 +65,8 @@ export class ReservationCreateComponent implements OnInit {
 
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params.id;
+    console.log(this.id);
     this.GetRoom();
     this.DoTable();
     this.contactForm = this.fb.group({
@@ -69,10 +75,17 @@ export class ReservationCreateComponent implements OnInit {
       yearStart: [null],
       monthEnd: [null],
       dayEnd: [null],
-      yearEnd: [null]
+      yearEnd: [null],
+      customer: [null]
     });
-    this.customer = JSON.parse(sessionStorage.getItem('login'));
-
+    if (JSON.parse(sessionStorage.getItem('login'))) {
+      console.log("JSON")
+      this.customer = JSON.parse(sessionStorage.getItem('login'));
+    } else {
+      this.customer = new Customer();
+      this.customer.idCustomer = -1;
+    }
+    this.getCustomers();
   }
 
   GetRoom() {
@@ -90,6 +103,10 @@ export class ReservationCreateComponent implements OnInit {
   GetReservationList() {
     this.reservationArr = this.reservationservice.getReservationByRoomId(
       this.room.idRoom);
+  }
+
+  getCustomers() {
+    this.customers = this.customerService.getCustomersList();
   }
 
 
@@ -118,7 +135,6 @@ export class ReservationCreateComponent implements OnInit {
   }
 
   DoTable() {
-
     let miesaic = this.todaydate.getMonth();
     let kaldat = new Date(this.todaydate.getFullYear(), miesaic, 1);
     let dzienTyg = kaldat.getDay();
@@ -140,17 +156,6 @@ export class ReservationCreateComponent implements OnInit {
     console.log(this.dniMs);
   }
 
-  znajdzKolor() {
-
-
-  }
-
-  changemonths($event: Event) {
-    //wyswietl nowy kalendarz
-    console.log('Changed month from the Dropdown');
-    // console.log(this.wybranyMiesiac);
-  }
-
   onSubmit() {
     let monthStart = this.months.indexOf(this.contactForm.get('monthStart').value) + 1;
     let monthEnd = this.months.indexOf(this.contactForm.get('monthEnd').value) + 1;
@@ -167,11 +172,15 @@ export class ReservationCreateComponent implements OnInit {
 
     let howLong = (this.EndDate.getTime() - this.StartDate.getTime()) / (1000 * 3600 * 24);
     console.log(howLong);
-    console.log(this.StartDate);
-    console.log(this.EndDate);
+    console.log(this.customer);
+    console.log(this.contactForm.get('customer').value);
+    if (this.customer.idCustomer == -1) {
+      this.customer.idCustomer = this.contactForm.get('customer').value;
+    }
     let reservation: Reservation = new Reservation(this.StartDate, this.EndDate, this.room.idRoom, this.customer.idCustomer, howLong);
     console.log(this.StartDate);
-    this.reservationservice.createReservation(this.room.idRoom, this.customer.idCustomer, reservation).subscribe(data => console.log(data));
+    this.reservationservice.createReservation(this.room.idRoom, this.customer.idCustomer, reservation).subscribe(() => this.router.navigate([`/reservationcreate/${this.room.idRoom}`]));
+    this.router.navigate([`/reservationcreate/${this.room.idRoom}`]);
   }
 
 }

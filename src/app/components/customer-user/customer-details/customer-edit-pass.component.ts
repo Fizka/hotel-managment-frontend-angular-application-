@@ -6,14 +6,16 @@ import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-customer-details',
-  template:'      <label>Stare hasło:</label>\n' +
-    ' <input class="inputform" type="text" name="lastname" id="lastname" required [(ngModel)]="odlPassword">' +
+  template: '<div class="jumbotron">' +
+    '      <label style="color: whitesmoke;">Stare hasło:</label>\n' +
+    ' <input class="inputform" type="text" name="lastname" id="lastname" style="color: whitesmoke; width: 450px;" required [(ngModel)]="odlPassword">' +
     ' <br/> <br/>\n' +
-    '<label>Nowe hasło:</label>' +
-    '<input class="inputform" type="text" name="email" id="email" required [(ngModel)]="newPassword">' +
+    '<label style="color: whitesmoke;">Nowe hasło:</label>' +
+    '<input class="inputform" type="text" name="email" id="email" style="color: whitesmoke; width: 450px;" required [(ngModel)]="newPassword">' +
     '<br/> <br/>\n'+
-    '<button type="button" class="btn btn-primary" (click)="reset()">Cofnij</button>'+
-    '<button type="button" class="btn btn-primary" (click)="save()">Zapisz</button>',
+    '<button type="button" style="width: 220px" class="btn btn-primary" (click)="reset()">Wróć</button>'+
+    '<button type="button" style="width: 220px" class="btn btn-primary" (click)="save()">Zapisz</button>' +
+  '</div>',
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerEditPassComponent implements OnInit {

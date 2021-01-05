@@ -28,7 +28,6 @@ export class MenuComponent implements OnInit {
       if(this.IsLogged()){
         sessionStorage.clear();
       }else{
-
       }
     }
 
@@ -56,6 +55,30 @@ export class MenuComponent implements OnInit {
         return false;
     }
 
+
+  checkLog() {
+    return JSON.parse(sessionStorage.getItem('zalogowany'));
+  }
+
+  checkUpr() {
+    return JSON.parse(sessionStorage.getItem('uprawnienia'));
+  }
+
+  checkAdmin() {
+    return JSON.parse(sessionStorage.getItem('admin'));
+  }
+
+  logOut() {
+    if (this.checkLog()) {
+      sessionStorage.clear();
+      sessionStorage.setItem('login', JSON.stringify(null));
+      sessionStorage.setItem('zalogowany', JSON.stringify(false));
+    }
+  }
+
+  getActionLog(){
+    this.logOut();
+  }
 
   IsOut(){
     alert("Zmiana!")

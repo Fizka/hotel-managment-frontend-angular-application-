@@ -1,0 +1,16 @@
+.edit-modal{
+  text-align: center;
+}
+
+.edit-modal h2{
+  font-size: 18px;
+  color: white;
+}
+
+::ng-deep .mat-dialog-container{
+ padding: 0px !important;
+}
+
+::ng-deep .jumbotron{
+  margin-bottom: 0px !important;
+}

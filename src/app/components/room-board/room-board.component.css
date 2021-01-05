@@ -1,5 +1,5 @@
 
-.elemy{
+.elemy {
   margin: 20px;
   text-align: center;
   flex-wrap: wrap;
@@ -13,7 +13,7 @@
   min-height: 450px;
 }
 
-.danepok{
+.danepok {
   padding-top: 30px;
   background: whitesmoke;
   text-align: center;
@@ -23,12 +23,32 @@
   align-items: center;
 }
 
-.tab{
-  padding-top: 30px ;
+.tab {
+  padding-top: 30px;
   display: flex;
 }
 
+.inputs-room {
+  text-align: center;
+  color: white;
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.card{
+.card {
   background: #4E4F63 !important;
+}
+
+.input-search {
+  margin: 10px;
+  width: 600px;
+}
+
+.page-margin{
+  margin: 0px 200px 0px 200px;
 }

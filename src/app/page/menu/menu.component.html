@@ -1,43 +1,57 @@
 <div [style.visibility]="visible" [style.opacity]="opacity" id="menu">
   <ul>
     <li>
-      <a  href="log" (click)="onSubmit()">{{logowanie}}</a>
+      <a href="roomboard">OFERTY</a>
     </li>
     <li>
-      <a href="roomboard">Oferty</a>
+      <a  href="log" *ngIf="!checkLog()">ZALOGUJ</a>
     </li>
     <li>
-      <a href="workercreation">Nowy Pracownik</a>
+      <a *ngIf="!checkLog()" href="signup">REJESTRACJA</a>
     </li>
     <li>
-      <a href="profil">Profil</a>
+      <a href="profil" *ngIf="checkLog()">PROFIL</a>
     </li>
     <li>
-      <a href="roomadd">Dodaj Pokoj</a>
+    <div  *ngIf="checkLog() && checkUpr()" class="dropdown">
+      <button class="dropbtn">E-PRACOWNIK
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="panel">OBOWIĄZKI</a>
+          <a href="reservationboard">REZERWACJE</a>
+        <a href="workergrid">OFERTY</a>
+      </div>
+    </div>
     </li>
     <li>
-      <a href="workergrid">Room Grid</a>
+      <div  *ngIf="checkLog() && checkAdmin()" class="dropdown">
+        <button class="dropbtn"><p>    </p> ZARZĄDZAJ
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="workercreation">NOWY PRACOWNIK</a>
+          <a href="roomadd">DODAJ OFERTĘ</a>
+        </div>
+      </div>
     </li>
     <li>
-      <a href="panel">panel</a>
+      <div  *ngIf="checkLog() && checkAdmin()" class="dropdown">
+        <button class="dropbtn"><p>      </p> <p>  </p>PANELE
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="workerboard">PRACOWNIK</a>
+          <a href="customerboard">KLIENT</a>
+          <a href="roomgrid">OFERTY</a>
+        </div>
+      </div>
     </li>
     <li>
-      <a href="e_worker">e-Worker</a>
+      <a href="e_worker" *ngIf="!checkLog() ">E-PRACOWNIK</a>
     </li>
     <li>
-      <a href="workerboard">Pracownicy</a>
-    </li>
-    <li>
-      <a href="customerboard">Klient Board</a>
-    </li>
-    <li>
-      <a href="reservationboard">Rezerwacje</a>
-    </li>
-    <li>
-      <a href="roomgrid">Pokoje</a>
-    </li>
-    <li>
-      <a *ngIf="!IsLogged()" href="signup">Rejestracja</a>
+      <a  href="roomboard" *ngIf="checkLog()" (click)="logOut()">WYLOGUJ</a>
     </li>
   </ul>
 </div>

@@ -13,8 +13,31 @@
       <label>login</label>
       <input class="inputform" name="login" id="login" required [(ngModel)]="customer.login" value="{{customer.login}}">
       <br/>
-      <button type="button" class="btn btn-primary" (click)="edytuj()"> Zapisz zmiany</button>
-      <button type="button" class="btn btn-primary" (click)="changePassword()">Nowe hasło</button>
+      <div class="btn-user-profil">
+        <button type="button" class="btn btn-primary btn-lg" (click)="edytuj()"> Zapisz zmiany</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="changePassword()">Nowe hasło</button>
+      </div>
     </div>
   </div>
+</div>
+<div *ngIf="reservations">
+  <div class="reservation-hole">
+    <h2>Rezerwacje</h2>
+  </div>
+<div *ngFor="let reservation of reservations">
+  <div class="comment">
+    <p>
+       <br/>
+      <strong> Termin rezerwacji:</strong> <br/>
+      <strong>Od </strong>{{reservation.startData}}
+        <strong>Do</strong> {{reservation.endData}} <br/>
+          <strong>Długość rezerwacji:</strong> {{reservation.howLong}} <br/>
+      {{reservation.room}}
+    </p>
+    <div *ngIf="!reservation.status">
+      <button type="button" class="btn btn-primary " (click)="changeStatus(reservation)">Potwierdź rezerwacje</button>
+      <button type="button" class="btn btn-primary "  (click)="removeReservation(reservation)">Usuń rezerwacje</button>
+    </div>
+  </div>
+</div>
 </div>

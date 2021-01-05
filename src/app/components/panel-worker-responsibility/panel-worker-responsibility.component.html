@@ -1,9 +1,10 @@
 <div class="panelHelp">
-  <button type="button" class="btn btn-primary" (click)="newResponsibility()">Dodaj Obowiązek</button>
+  <button type="button" class="btn btn-primary btn-lg" (click)="newResponsibility()">Dodaj Obowiązek</button>
   <br/>
   <br/>
+
   <h3>Wyszukaj obowiązki pracownika:</h3>
-  <input type="text" name="inputfilter" required [(ngModel)]="filter" (keyup)="filterFunction()">
+  <input type="text" name="inputfilter" class="form-control" style="width: 600px; text-align: center" [(ngModel)]="filter" (keyup)="filterFunction()">
 </div>
 <div class="wstaw">
   <div class="responsibility-card" *ngFor="let responsibility of responsibility">
@@ -13,9 +14,12 @@
           <h4 class="card-title"> Status:   {{responsibility.status}}</h4>
           <h4 class="card-title"> Przypisane:    {{responsibility.responsible}}</h4>
           <p class="card-text"> Opis:  {{responsibility.description}}</p>
-        <button type="button" class="btn btn-primary" [hidden]="checkStatus(responsibility.status)" (click)="zmienStatus(responsibility)">
+        <button type="button" class="btn btn-primary btn-lg" [hidden]="checkStatus(responsibility.status)" (click)="zmienStatus(responsibility)">
           Zmien Status
         </button>
+          <button type="button" class="btn btn-primary btn-lg" (click)="deleteResponsibility(responsibility)">
+            Usuń
+          </button>
       </div>
     </div>
   </div>

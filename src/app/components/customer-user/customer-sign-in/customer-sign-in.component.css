@@ -10,11 +10,11 @@
   padding: 30px;
   text-align: center;
   flex-wrap: wrap;
-  width: 400px;
+  width: 600px;
 }
 
 .inputform{
-  margin: 20px;
+  margin: 20px 0px;
   background: none;
   border-bottom-color: whitesmoke;
   box-shadow: none;
@@ -22,7 +22,7 @@
   border-left: none;
   border-right: none;
   padding: 10px;
-  width: 300px;
+  width: 540px;
 }
 
 .buttonSo{
@@ -36,4 +36,8 @@
 
 .buttonSo:hover{
   transform: scale(1.2);
+}
+
+.btn-sumbit-logowanie{
+  margin-top: 40px;
 }

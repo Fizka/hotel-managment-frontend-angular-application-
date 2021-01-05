@@ -50,17 +50,21 @@ export class PanelWorkerResponsibilityComponent implements OnInit {
     return row.responsible.toUpperCase().includes(this.filter.toUpperCase());
   }
 
-  newResponsibility(){
+  newResponsibility() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.id = 'modal-component';
-    dialogConfig.height = '900px';
+    dialogConfig.height = '760px';
     dialogConfig.width = '600px';
     const modalDialog = this.matDialog.open(NewResponsiblilityComponent, dialogConfig);
     this.reloadData();
   }
 
+  deleteResponsibility(value) {
+    this.responsibilityService.deleteResponsibility(value.idResponsibility)
+      .subscribe(  ()=>this.reloadData());
+  }
 
   filterFunction() {
     this.filter !== '' ?

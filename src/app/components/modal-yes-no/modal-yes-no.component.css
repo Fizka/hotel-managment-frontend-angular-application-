@@ -1,0 +1,11 @@
+.panel-yes-no{
+  background: white;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.jumbotron{
+  padding: 10px;
+}

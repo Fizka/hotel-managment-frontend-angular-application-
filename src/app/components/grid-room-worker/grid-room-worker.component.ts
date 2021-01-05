@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {EditCellRenderComponent} from '../room-grid/edit-cell-render.component';
+import {Component, NgZone, OnInit} from '@angular/core';
 import {RoomService} from '../../service/room.service';
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {Router} from '@angular/router';
-import {ModalYesNoComponent} from '../modal-yes-no/modal-yes-no.component';
 
 @Component({
   selector: 'app-grid-room-worker',
@@ -16,24 +13,24 @@ export class GridRoomWorkerComponent implements OnInit {
 
   defaultColDef = {
     sortable: true,
-    editable: true,
     filter: true,
     resizable: true,
     wrapText: true
   };
   columnDefs = [
-    {headerName: 'Piętro', field: 'floor', sortable: true, filter: true, singleClickEdit: true},
-    {headerName: 'Numer Pokoju', field: 'numberRM', sortable: true, filter: true, singleClickEdit: true},
-    {headerName: 'Cena', field: 'price', sortable: true, filter: true, singleClickEdit: true},
-    {headerName: 'Pojemność', field: 'maxCapacity', sortable: true, filter: true, singleClickEdit: true},
-    {headerName: 'Tytuł', field: 'title', sortable: true, filter: true, singleClickEdit: true},
-    {headerName: 'Opis', field: 'description', sortable: true, filter: true, resizable: false, width: 800, singleClickEdit: true},
+    {headerName: 'Piętro', field: 'floor', sortable: true, filter: true},
+    {headerName: 'Numer Pokoju', field: 'numberRM', sortable: true, filter: true},
+    {headerName: 'Cena', field: 'price', sortable: true, filter: true},
+    {headerName: 'Pojemność', field: 'maxCapacity', sortable: true, filter: true},
+    {headerName: 'Tytuł', field: 'title', sortable: true, filter: true},
+    {headerName: 'Opis', field: 'description', sortable: true, filter: true, resizable: false, width: 800},
   ];
   rowData = [];
 
+
   constructor(private roomService: RoomService,
-              public matDialog: MatDialog,
-              private router: Router) {
+              private router: Router,
+              private zone: NgZone) {
   }
 
   onGridReady(params) {
@@ -46,8 +43,10 @@ export class GridRoomWorkerComponent implements OnInit {
   }
 
   goToReservation(value) {
-    console.log(value.data.idReservation)
-    this.router.navigate(['reservationcreate'], value.data.idReservation);
+    //console.log(value.data.idRoom)
+    this.zone.run(() => {
+      this.router.navigate([`/reservationcreate/${value.data.idRoom}`]);
+    });
   }
 
   public reloadData() {

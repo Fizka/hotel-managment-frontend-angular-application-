@@ -3,7 +3,6 @@ import {RoomService} from '../../service/room.service';
 import {ModalYesNoComponent} from '../modal-yes-no/modal-yes-no.component';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {EditCellRenderComponent} from './edit-cell-render.component';
-import {Router} from '@angular/router';
 
 
 @Component({
@@ -23,21 +22,20 @@ export class RoomGridComponent implements OnInit {
   };
   columnDefs = [
     {
-      headerName: '', width: 180, cellRendererFramework: EditCellRenderComponent,
+      headerName: '', width: 240, cellRendererFramework: EditCellRenderComponent,
       sortable: false, filter: false, singleClickEdit: false, editable: false
     },
     {headerName: 'Piętro', field: 'floor', sortable: true, filter: true, singleClickEdit: true},
     {headerName: 'Numer Pokoju', field: 'numberRM', sortable: true, filter: true, singleClickEdit: true},
     {headerName: 'Cena', field: 'price', sortable: true, filter: true, singleClickEdit: true},
     {headerName: 'Pojemność', field: 'maxCapacity', sortable: true, filter: true, singleClickEdit: true},
-    {headerName: 'Tytuł', field: 'title', sortable: true, filter: true, singleClickEdit: true},
+    {headerName: 'Tytuł', field: 'title', sortable: true, filter: true, singleClickEdit: true, width: 400},
     {headerName: 'Opis', field: 'description', sortable: true, filter: true, resizable: false, width: 800, singleClickEdit: true},
   ];
   rowData = [];
 
   constructor(private roomService: RoomService,
-              public matDialog: MatDialog,
-              private router: Router) {
+              public matDialog: MatDialog) {
   }
 
   onGridReady(params) {
@@ -47,11 +45,6 @@ export class RoomGridComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
-  }
-
-  goToReservation(value) {
-    console.log(value.data.idReservation)
-    this.router.navigate(['reservationcreate'], value.data.idReservation);
   }
 
   public reloadData() {
@@ -67,8 +60,8 @@ export class RoomGridComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.id = 'modal-component';
-    dialogConfig.height = '350px';
-    dialogConfig.width = '600px';
+    dialogConfig.height = '190PX';
+    dialogConfig.width = '290px';
     dialogConfig.data = params.data;
     const modalDialog = this.matDialog.open(ModalYesNoComponent, dialogConfig);
     modalDialog.afterClosed().subscribe(

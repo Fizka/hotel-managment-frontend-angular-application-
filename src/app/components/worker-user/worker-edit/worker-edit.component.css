@@ -8,6 +8,7 @@
   border-right: none;
   padding: 10px;
   width: 300px;
+  color: white;
 }
 
 #pola{
@@ -22,6 +23,8 @@
   text-align: left;
   flex-wrap: wrap;
   width: 600px;
+  color: white;
+  font-size: 16px;
 }
 
 #formUpr{
@@ -35,4 +38,10 @@
 
 label{
   width: 200px;
+}
+
+.btn-sumbit-edit-worker{
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
 }

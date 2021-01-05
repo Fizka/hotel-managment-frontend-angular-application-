@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Room} from '../models/room';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,10 @@ export class RoomService {
 
   getRoomsList(): Observable<any> {
     return this.http.get(this.baseUrl);
+  }
+
+  getRoomList(): Observable<Room[]> {
+    return this.http.get<Room[]>(this.baseUrl);
   }
 
   deleteAllRooms(): Observable<any> {

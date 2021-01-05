@@ -1,7 +1,7 @@
+<div class="jumbotron">
 <div id="pola">
   <div id="data">
     <form>
-      <fieldset>
         <label for="firstname">Imie</label>
         <input class="inputform" type="text" name="firstname" id="firstname" required [(ngModel)]="worker.firstname"
                value="{{worker.firstname}}"><br/> <br/>
@@ -40,13 +40,15 @@
                [(ngModel)]="worker.dateofemployment" value="{{worker.dateofemployment}}"><br/> <br/>
         <label for="uprawnienia">Uprawnienia: </label>
         <select formControlName="uprawnienia" id="uprawnienia"><br/> <br/>
-          <option selected value="" hidden disabled>Uprawnienia</option>
           <option *ngFor="let upr of uprawnienia" [ngValue]="upr.id"> {{upr.stan}}</option>
         </select>
-        <button type="button" class="btn btn-primary" (click)="onReset()">Close</button>
-        <button type="button" class="btn btn-primary" (click)="onSave()">Zapisz</button>
-      </fieldset>
+      <div class="btn-sumbit-edit-worker">
+        <button type="button" class="btn btn-primary btn-lg" (click)="onSave()">Zapisz</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="onReset()">Wyjdź</button>
+      </div>
     </form>
   </div>
+</div>
+
 </div>
 

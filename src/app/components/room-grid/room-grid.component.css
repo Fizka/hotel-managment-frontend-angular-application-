@@ -1,3 +1,19 @@
 .ag-theme-alpine-dark .ag-cell{
   line-height: unset !important;
 }
+
+.btn-icony-del{
+  background: url("src/assets/garbage.png") no-repeat;
+}
+
+
+.btn-icony-edit{
+  background: url("src/assets/pencils.png") no-repeat;
+}
+
+.btn-icony{
+  margin-top: 20px;
+  height: 33px;
+  width: 33px;
+  border-color: transparent;
+}
