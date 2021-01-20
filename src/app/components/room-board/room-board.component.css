@@ -52,3 +52,41 @@
 .page-margin{
   margin: 0px 200px 0px 200px;
 }
+
+
+@media only screen and  (max-width: 800px) {
+
+  .form-control{
+    width: 500px !important;
+  }
+
+  .elemy{
+    min-width: 400px;
+    min-height: 700px;
+    width: 450px !important;
+    margin-bottom: 20px;
+    flex-flow: column;
+
+  }
+
+  .inputs-room {
+    text-align: center;
+    align-items: center;
+    color: white;
+    width: 500px !important;
+    padding: 10px 20px;
+    margin: 0px 20px ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .page-margin{
+    margin: 0px 20px 0px 20px;
+  }
+
+  .card{
+   width: 450px !important;
+  }
+}

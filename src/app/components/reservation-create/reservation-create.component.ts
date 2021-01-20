@@ -1,13 +1,13 @@
 import {AfterViewInit, Component, Input, OnInit, ViewChild, Renderer2} from '@angular/core';
-import {Room} from '../../models/room';
+import {Room} from '../../model/room';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../service/room.service';
 import {ReservationService} from '../../service/reservation.service';
 import {Observable} from 'rxjs';
-import {Reservation} from '../../models/reservations';
+import {Reservation} from '../../model/reservations';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {Reservet} from '../../models/reservet';
-import {Customer} from '../../models/customer';
+import {Reservet} from '../../model/reservet';
+import {Customer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
 import {MenuComponent} from '../../page/menu/menu.component';
 

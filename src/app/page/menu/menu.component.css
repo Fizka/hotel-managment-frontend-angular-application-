@@ -1,4 +1,4 @@
-#menu{
+.menu{
   opacity: 1;
   visibility: visible;
   position: fixed;
@@ -17,7 +17,7 @@
   font-size: 16px;
 }
 
-#menu ul{
+.menu ul{
   justify-content: space-around;
   list-style-type: none;
   text-align: center;
@@ -26,21 +26,21 @@
   height: 30px;
 }
 
-#menu li{
+.menu li{
   padding: 0px;
   box-sizing: content-box;
   display: inline-flex;
   height: 30px;
 }
 
-#menu a{
+.menu a{
   text-decoration: none;
   height: 30px;
   color: white;
   width: 200px;
 }
 
-#menu a:hover{
+.menu a:hover{
   transform: scale(1.05);
   transform: rotate(3deg);
   transition: 0.2s all ease-in-out;
@@ -111,9 +111,9 @@
 }
 
 
-@media only screen and  (max-width: 1100px){
+@media only screen and  (min-width: 800px) and (max-width: 1100px){
 
-  #menu{
+  .menu{
     height: 80px;
   }
 
@@ -122,41 +122,78 @@
     width: 30px;
   }
 
-  #menu{
-    padding-left: 35px;
-  }
-
 }
 
 @media only screen and  (max-width: 800px){
 
-  #menu{
-    padding-left: 15px;
+  .menu{
+    padding: 0px ;
     margin-top: 0px;
-    height: 300px;
-    width: 100%;
+    width: 400px;
     border: 2px solid whitesmoke;
+    text-align: center;
   }
 
-  #menu li{
+  .menu-klient{
+    height: 150px;
+  }
+
+  .menu-singin{
+    height: 200px;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 16px;
+    padding: 0px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    width: 400px;
+  }
+
+  .dropdown-content {
+    min-width: 99%;
+    color: white;
+  }
+
+  .dropdown-content a {
+    padding: 2px 2px;
+    min-width: 400px;
+    text-align: center;
+    color: white;
+  }
+
+  .menu-admin{
+    height: 160px;
+  }
+
+  .drop-down-pole{
+    width: 99%;
+    text-align: center;
+  }
+
+  .dropdown {
+    float: top;
+  }
+
+  .visible-menu{
+    display: none !important;
+  }
+
+  .menu li{
     margin-top: 0px;
     display: flex;
+    height: 100%;
     border: 2px solid whitesmoke;
   }
 
-  #menu ul{
-    width: 75%;
+  .menu ul{
+      width: 100%;
   }
 
-  #menu a{
-    padding-top: 0px;
+  .menu a{
+    padding-top: 2px;
     width: 100%;
-  }
-
-  #hamburger{
-    margin-top: 311px;
-    height: 40px;
-    width: 40px;
   }
 
 }

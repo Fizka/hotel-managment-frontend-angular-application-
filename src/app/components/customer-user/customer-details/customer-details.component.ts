@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Worker} from '../../../models/worker';
+import {Worker} from '../../../model/worker';
 import {Router} from '@angular/router';
-import {Customer} from '../../../models/customer';
+import {Customer} from '../../../model/customer';
 import {CustomerService} from '../../../service/customer.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {WorkerEditComponent} from '../../worker-user/worker-edit/worker-edit.component';
 import {CustomerEditPassComponent} from './customer-edit-pass.component';
-import {Reservation} from '../../../models/reservations';
+import {Reservation} from '../../../model/reservations';
 import {ReservationService} from '../../../service/reservation.service';
 
 @Component({

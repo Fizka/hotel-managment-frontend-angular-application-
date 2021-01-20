@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Room} from '../../models/room';
+import {Room} from '../../model/room';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../service/room.service';
 import {CommentService} from '../../service/comment.service';
-import {Customer} from '../../models/customer';
-import {CommentModel} from '../../models/commentModel';
+import {Customer} from '../../model/customer';
+import {CommentModel} from '../../model/commentModel';
 
 @Component({
   selector: 'app-room-details',

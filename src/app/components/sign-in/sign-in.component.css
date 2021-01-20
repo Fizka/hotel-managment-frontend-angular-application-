@@ -39,3 +39,27 @@
   font-size: 26px;
   padding-bottom: 40px;
 }
+
+
+@media only screen and  (max-width: 800px) {
+
+  .inputform{
+    margin: 20px 0px;
+    background: none;
+    border-bottom-color: whitesmoke;
+    box-shadow: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 20px 0px;
+    width: 400px;
+  }
+
+  #data{
+    padding: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 450px;
+  }
+
+}

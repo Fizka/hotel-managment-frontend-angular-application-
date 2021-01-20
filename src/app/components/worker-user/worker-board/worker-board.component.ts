@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RoomService} from '../../../service/room.service';
 import {Observable} from 'rxjs';
-import {Room} from '../../../models/room';
+import {Room} from '../../../model/room';
 import {WorkerService} from '../../../service/worker.service';
 import {EditCellRenderComponent} from '../../room-grid/edit-cell-render.component';
 import {WorkerEditTemplateComponent} from './worker-edit-template.component';

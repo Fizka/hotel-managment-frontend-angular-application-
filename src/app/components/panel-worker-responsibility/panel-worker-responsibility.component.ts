@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ResponsibilityService} from '../../service/responsibility.service';
-import {Responsibility} from '../../models/responsibility';
+import {Responsibility} from '../../model/responsibility';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../../../service/customer.service';
-import {Customer} from '../../../models/customer';
+import {Customer} from '../../../model/customer';
 import {FormBuilder} from '@angular/forms';
 import {MatDialogRef} from '@angular/material/dialog';
 

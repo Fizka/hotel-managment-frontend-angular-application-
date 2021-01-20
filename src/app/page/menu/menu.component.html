@@ -1,32 +1,34 @@
-<div [style.visibility]="visible" [style.opacity]="opacity" id="menu">
+<div [style.visibility]="visible" [style.opacity]="opacity"
+  class="menu menu-klient" [ngClass]="{'menu-klient': !checkLog() && !checkAdmin(),
+  'menu-singin': checkLog() && !checkAdmin(), 'menu-admin': checkUpr()}" >
   <ul>
     <li>
-      <a href="roomboard">OFERTY</a>
+      <a href=" roomboard">OFERTY</a>
     </li>
-    <li>
-      <a  href="log" *ngIf="!checkLog()">ZALOGUJ</a>
+    <li [ngClass]="{'visible-menu': checkLog()}">
+      <a href="log" *ngIf="!checkLog()" >ZALOGUJ</a>
     </li>
-    <li>
+    <li [ngClass]="{'visible-menu': checkLog()}">
       <a *ngIf="!checkLog()" href="signup">REJESTRACJA</a>
     </li>
-    <li>
+    <li [ngClass]="{'visible-menu': !checkLog()}">
       <a href="profil" *ngIf="checkLog()">PROFIL</a>
     </li>
-    <li>
-    <div  *ngIf="checkLog() && checkUpr()" class="dropdown">
-      <button class="dropbtn">E-PRACOWNIK
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="panel">OBOWIĄZKI</a>
+    <li [ngClass]="{'visible-menu': !checkLog() && !checkUpr()}" class="drop-down-pole">
+      <div  *ngIf="checkLog() && checkUpr()" class="dropdown">
+        <button class="dropbtn">E-PRACOWNIK
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="panel">OBOWIĄZKI</a>
           <a href="reservationboard">REZERWACJE</a>
-        <a href="workergrid">OFERTY</a>
+          <a href="workergrid">OFERTY</a>
+        </div>
       </div>
-    </div>
     </li>
-    <li>
+    <li [ngClass]="{'visible-menu':!checkAdmin()}" class="drop-down-pole">
       <div  *ngIf="checkLog() && checkAdmin()" class="dropdown">
-        <button class="dropbtn"><p>    </p> ZARZĄDZAJ
+        <button class="dropbtn">ZARZĄDZAJ
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -35,9 +37,9 @@
         </div>
       </div>
     </li>
-    <li>
+    <li [ngClass]="{'visible-menu':!checkAdmin()}" class="drop-down-pole">
       <div  *ngIf="checkLog() && checkAdmin()" class="dropdown">
-        <button class="dropbtn"><p>      </p> <p>  </p>PANELE
+        <button class="dropbtn">PANELE
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -47,11 +49,11 @@
         </div>
       </div>
     </li>
-    <li>
+    <li [ngClass]="{'visible-menu': checkLog()}">
       <a href="e_worker" *ngIf="!checkLog() ">E-PRACOWNIK</a>
     </li>
-    <li>
-      <a  href="roomboard" *ngIf="checkLog()" (click)="logOut()">WYLOGUJ</a>
+    <li [ngClass]="{'visible-menu': !checkLog()}">
+      <a href="roomboard" *ngIf="checkLog()" (click)="logOut()">WYLOGUJ</a>
     </li>
   </ul>
 </div>

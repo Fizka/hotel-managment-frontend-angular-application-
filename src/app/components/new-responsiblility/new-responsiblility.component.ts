@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
-import {Responsibility} from '../../models/responsibility';
+import {Responsibility} from '../../model/responsibility';
 import {ResponsibilityService} from '../../service/responsibility.service';
 import {WorkerService} from '../../service/worker.service';
 import {Observable} from 'rxjs';

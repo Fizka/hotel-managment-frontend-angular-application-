@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {Worker} from '../../models/worker';
+import {Worker} from '../../model/worker';
 import {RoomService} from '../../service/room.service';
 import {Router} from '@angular/router';
-import {Room} from '../../models/room';
+import {Room} from '../../model/room';
 
 @Component({
   selector: 'app-room-creationer',

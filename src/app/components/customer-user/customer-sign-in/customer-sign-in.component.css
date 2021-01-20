@@ -1,4 +1,4 @@
-#pola{
+#pola {
   box-sizing: content-box;
   display: flex;
   text-align: center;
@@ -6,14 +6,14 @@
   padding-top: 200px;
 }
 
-#data{
+#data {
   padding: 30px;
   text-align: center;
   flex-wrap: wrap;
   width: 600px;
 }
 
-.inputform{
+.inputform {
   margin: 20px 0px;
   background: none;
   border-bottom-color: whitesmoke;
@@ -25,7 +25,7 @@
   width: 540px;
 }
 
-.buttonSo{
+.buttonSo {
   background: transparent;
   width: 300px;
   text-align: center;
@@ -34,10 +34,26 @@
   border: none;
 }
 
-.buttonSo:hover{
+.buttonSo:hover {
   transform: scale(1.2);
 }
 
-.btn-sumbit-logowanie{
+.btn-sumbit-logowanie {
   margin-top: 40px;
+}
+
+@media only screen and  (max-width: 800px) {
+
+  .inputform {
+    width: 400px;
+    color: white;
+  }
+
+  #data {
+    width: 450px;
+  }
+
+  #pola {
+    padding-top: 20px;
+  }
 }

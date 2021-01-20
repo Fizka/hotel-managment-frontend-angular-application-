@@ -1,7 +1,7 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import {Worker} from '../../../models/worker';
+import {Worker} from '../../../model/worker';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {Room} from '../../../models/room';
+import {Room} from '../../../model/room';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {MenuComponent} from '../../../page/menu/menu.component';
 import {CustomerService} from '../../../service/customer.service';
-import {Customer} from '../../../models/customer';
+import {Customer} from '../../../model/customer';
 
 @Component({
   selector: 'app-customer-sign-in',

@@ -49,6 +49,13 @@
   display: initial;
 }
 
+@media only screen and  (max-width: 800px) {
+
+  .form-control{
+    width: 300px !important;
+  }
+}
+
 
 
 
